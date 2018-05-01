@@ -10,8 +10,13 @@
     <p> This is a php page </p>
 
     <?php
-    $x = 501 . 23;
-    echo $x;
+    for($i = 0; $i < 10; $i++){
+        $id = ($i + 1);
+        if($id % 2 == 0)
+            echo '<div id="$id" color="red"> Div $id </div>';
+        else
+            echo '<div id="$id"> div $id </div>';    
+    }
     ?>
 </body>
 </html>
