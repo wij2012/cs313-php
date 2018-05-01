@@ -13,7 +13,7 @@
     for($i = 0; $i < 10; $i++){
         $id = ($i + 1);
         if($id % 2 == 0)
-            echo '<div id="$id" color="red"> Div $id </div>';
+            echo '<div id="$id"><font color="red"> Div $id </font></div>';
         else
             echo '<div id="$id"> div $id </div>';    
     }
