@@ -10,7 +10,7 @@
     <p> This is a php page </p>
 
     <?php
-    $x = 501 + 23;
+    $x = 501 . 23;
     echo $x;
     ?>
 </body>
