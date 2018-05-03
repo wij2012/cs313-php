@@ -9,9 +9,15 @@
 <body>
     <h1>Donuts inc.</h1>
 
+    <?php
+      include 'navbar.php';
+    ?>
+
+    <br>
     <div>
     <a href="http://"> Login as Administrator</a>
     <a href="http://"> Login as Tester</a>
     </div>
+
 </body>
 </html>
