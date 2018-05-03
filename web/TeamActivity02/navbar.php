@@ -8,9 +8,13 @@
 </head>
 <body>
     <div class="navbar"> 
+        <?php
+        echo $page;
+        ?>
+        
         <ul> 
         <li class="<?php if($page == 'login') {echo 'active';}?>"> <a href="login.php"> Login </a> </li>
-        <li class="<?php if($page == 'home') {echo 'active';}?>"><a href="home.php"> Home </a> </li> 
+        <li class="<?php if($page == 'home') {echo 'active';}?>"> <a href="home.php"> Home </a> </li> 
         <li class="<?php if($page == 'about') {echo 'active';}?>"> <a href="about-us.php"> About Us </a> </li> 
         </ul> 
     </div>
