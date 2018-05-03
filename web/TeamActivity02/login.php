@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Login</title>
 </head>
 <body>
@@ -14,6 +15,7 @@
     ?>
 
     <br>
+    
     <div>
     <a href="http://"> Login as Administrator</a>
     <a href="http://"> Login as Tester</a>
