@@ -1,6 +1,6 @@
 body {
     background-color: #b30000;
-    align-content: center;
+    text-align: center;
 }
 
 .list{
@@ -8,5 +8,4 @@ body {
     background-color: #cccccc;
     border-bottom-style: solid;
     border-radius: 5px;
-    text-align: center;
 }
