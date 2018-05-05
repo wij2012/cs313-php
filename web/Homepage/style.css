@@ -6,6 +6,7 @@ body {
 .list{
     width: 50%;
     background-color: #cccccc;
-    border-bottom-style: solid;
+    border-style: solid;
     border-radius: 5px;
+    align: center;
 }
