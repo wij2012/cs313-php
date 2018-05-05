@@ -1,4 +1,8 @@
 body {
     background-color: #b30000;
+    align-content: center;
 }
 
+.list{
+    width: 50%
+}
