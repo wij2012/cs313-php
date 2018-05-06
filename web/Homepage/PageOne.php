@@ -9,11 +9,12 @@
 </head>
 <body>
     <h1> William Johnson's CS 313 Home Page </h1>
+    <br>
     <?php include 'navbar.php'; ?>
    
     <img src="me.jpg" alt="me">
     <br> <br>
-    <div><b>This is me above.</b>></div>
+    <div><b>This is me above.</b></div>
 
     <div class="list"> 
         I'm pretty uninteresting. My main interests lie in nerdy things like 
@@ -24,7 +25,7 @@
     <br><br>
     <img src="infinity war.jpg" alt="infinity war">
     <br><br>
-    
+
     <div class="list">
         <b>Fun Fact: </b>
         <br> Avengers: Infinity War is now the fastest movie of all time 
