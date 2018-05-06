@@ -14,7 +14,7 @@
    
     <img src="me.jpg" alt="me">
     <br> <br>
-    <div>This is me above.</div>
+    <div><b>This is me above.</b>></div>
 
     
     <footer>
