@@ -19,7 +19,7 @@
     </div> 
 
     <footer>
-        <a href="PageOne.html"> Click here to go back to my main Home Page </a>
+        <a href="PageOne.php"> Click here to go back to my main Home Page </a>
     </footer>
 </body>
 </html>
