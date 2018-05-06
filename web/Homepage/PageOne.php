@@ -9,9 +9,10 @@
 </head>
 <body>
     <h1> William Johnson's CS 313 Home Page </h1>
-    <br>
+    
     <?php include 'navbar.php'; ?>
    
+    <br> 
     <img src="me.jpg" alt="me">
     <br> <br>
     <div><b>This is me above.</b></div>

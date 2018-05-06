@@ -9,8 +9,10 @@
 </head>
 <body>
     <h1> William Johnson's CS 313 Assignments Index </h1>
-    <br>
+    
     <?php include 'navbar.php'; ?>
+    
+    <br>
     
     <div class="list"> The links to  
         <br> my assignments for 
