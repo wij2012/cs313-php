@@ -21,8 +21,11 @@
         <br> enjoy spending time with my family and friends when I can.
     </div>
 
+    <br><br>
     <img src="infinity war.jpg" alt="infinity war">
-    <div>
+    <br><br>
+    
+    <div class="list">
         <b>Fun Fact: </b>
         <br> Avengers: Infinity War is now the fastest movie of all time 
         <br> to gross one billion dollars worldwide. It's also one of the 
