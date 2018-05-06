@@ -15,9 +15,18 @@
     <br> <br>
     <div><b>This is me above.</b>></div>
 
-    
-    <footer>
-        <a href="PageTwo.php"> Click here to see my list of CS 313 assignment links </a>
-    </footer>
+    <div class="list"> 
+        I'm pretty uninteresting. My main interests lie in nerdy things like 
+        <br> Star Wars, superhero comics, and video games. Although I also 
+        <br> enjoy spending time with my family and friends when I can.
+    </div>
+
+    <img src="infinity war.jpg" alt="infinity war">
+    <div>
+        <b>Fun Fact: </b>
+        <br> Avengers: Infinity War is now the fastest movie of all time 
+        <br> to gross one billion dollars worldwide. It's also one of the 
+        <br> best movies of all time. Don't worry. No spoilers here. 
+    </div>
 </body>
 </html>
