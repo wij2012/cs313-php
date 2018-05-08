@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <?php 
-    $page = 'about';
+    $page = "about";
     include 'navbar.php';
     ?>
     <meta charset="UTF-8">
@@ -13,8 +13,6 @@
 </head>
 <body>
     <h1>Donuts inc.</h1>
-    
-    
     <p>We eat and deliver donuts right to your door! <br> Make your orders on our website or give us a call. </p>
 </body>
 </html>
