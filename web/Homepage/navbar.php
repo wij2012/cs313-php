@@ -9,8 +9,8 @@
 <body>
 <div class="navbar"> 
         
-         <a href="PageTwo.html"> Assignments Index </a>
-         <a href="PageOne.html"> Home </a> 
+         <a href="PageOne.php"> Home </a> 
+         <a href="PageTwo.php"> Assignments Index </a>
     </div>
 </body>
 </html>
