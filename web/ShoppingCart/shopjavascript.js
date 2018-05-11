@@ -1,5 +1,6 @@
 function onToNumbers(){
     if(document.getElementById("ironman1").innerHTML == true){
-        documet.getElementById("ironman1").value = 1;
+        document.getElementById("ironman1").value = 1;
+        document.getElementById("testing").value = document.getElementById("ironman1").value; 
     }
 }
