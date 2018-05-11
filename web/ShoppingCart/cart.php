@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 if(!isset($cart)){
 $cart = array("ironman1" => "0",
 "ironman1" => "0",
