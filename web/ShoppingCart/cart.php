@@ -5,10 +5,10 @@ session_start();
 $key_ironman1 = "ironman1";
 
 if(!isset($_SESSION[$key_ironman1])) {
-    $_SESSION[$key_ironman1] = $_POST["ironman1"];
+    $_SESSION[$key_ironman1] = $_GET["ironman1"];
 }
 else {
-    $_SESSION[$key_ironman1] += $_POST["ironman1"];
+    $_SESSION[$key_ironman1] += $_GET["ironman1"];
 }
 /*if(!isset($_SESSION[$cart])){
 $_SESSION[$cart] = array("ironman1" => "0",
@@ -32,23 +32,23 @@ $_SESSION[$cart] = array("ironman1" => "0",
 }
 
 else{
-    $_SESSION[$cart["ironman1"]] += $_POST["ironman1"];
-    $cart["ironman2"] += $_POST["ironman2"];
-    $cart["ironman3"] += $_POST["ironman3"];
-    $cart["cap1"] += $_POST["cap1"];
-    $cart["cap2"] += $_POST["cap2"];
-    $cart["cap3"] += $_POST["cap3"];
-    $cart["thor1"] += $_POST["thor1"];
-    $cart["thor2"] += $_POST["thor2"];
-    $cart["thor3"] += $_POST["thor3"];
-    $cart["avengers1"] += $_POST["avengers1"];
-    $cart["avenger2"] += $_POST["avengers2"];
-    $cart["spider-man"] += $_POST["spider-man"];
-    $cart["guardians1"] += $_POST["guardians1"];
-    $cart["guardians2"] += $_POST["guardians2"];
-    $cart["panther"] += $_POST["panther"];
-    $cart["hulk"] += $_POST["hulk"];
-    $cart["ant-man"] += $_POST["ant-man"];
+    $_SESSION[$cart["ironman1"]] += $_GET["ironman1"];
+    $cart["ironman2"] += $_GET["ironman2"];
+    $cart["ironman3"] += $_GET["ironman3"];
+    $cart["cap1"] += $_GET["cap1"];
+    $cart["cap2"] += $_GET["cap2"];
+    $cart["cap3"] += $_GET["cap3"];
+    $cart["thor1"] += $_GET["thor1"];
+    $cart["thor2"] += $_GET["thor2"];
+    $cart["thor3"] += $_GET["thor3"];
+    $cart["avengers1"] += $_GET["avengers1"];
+    $cart["avenger2"] += $_GET["avengers2"];
+    $cart["spider-man"] += $_GET["spider-man"];
+    $cart["guardians1"] += $_GET["guardians1"];
+    $cart["guardians2"] += $_GET["guardians2"];
+    $cart["panther"] += $_GET["panther"];
+    $cart["hulk"] += $_GET["hulk"];
+    $cart["ant-man"] += $_GET["ant-man"];
 }*/
 
 echo "<h1> Your shopping cart </h1>";
