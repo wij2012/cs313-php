@@ -10,6 +10,7 @@ if(!isset($_SESSION[$key_ironman1])) {
 else {
     $_SESSION[$key_ironman1] += $_GET["ironman1"];
 }
+$ironman1 = $_SESSION[$key_ironman1];
 /*if(!isset($_SESSION[$cart])){
 $_SESSION[$cart] = array("ironman1" => "0",
 "ironman1" => "0",
