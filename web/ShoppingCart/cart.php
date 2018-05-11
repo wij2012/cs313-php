@@ -46,7 +46,7 @@ else{
 echo "<h1> Your shopping cart </h1>";
 
 echo "<table> <tr> <th> Item </th> <th> Number in cart </th> </tr>";
-echo "<tr> <td> Iron Man </td> <td>" . $cart['ironman'] > "</td></tr>";
+echo "<tr> <td> Iron Man </td> <td>" . $cart['ironman'] . "</td></tr>";
 
 echo "</table>"
 ?>
