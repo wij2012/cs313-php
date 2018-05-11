@@ -2,8 +2,16 @@
 
 session_start();
 
-if(!isset($cart)){
-$cart = array("ironman1" => "0",
+$key_ironman1 = "ironman1";
+
+if(!isset($_SESSION[$key_ironman1])) {
+    $_SESSION[$key_ironman1] = $_POST["ironman1"];
+}
+else {
+    $_SESSION[$key_ironman1] += $_POST["ironman1"];
+}
+/*if(!isset($_SESSION[$cart])){
+$_SESSION[$cart] = array("ironman1" => "0",
 "ironman1" => "0",
 "ironman2" => "0",
 "ironman3" => "0",
@@ -24,7 +32,7 @@ $cart = array("ironman1" => "0",
 }
 
 else{
-    $cart["ironman1"] += $_POST["ironman1"];
+    $_SESSION[$cart["ironman1"]] += $_POST["ironman1"];
     $cart["ironman2"] += $_POST["ironman2"];
     $cart["ironman3"] += $_POST["ironman3"];
     $cart["cap1"] += $_POST["cap1"];
@@ -41,12 +49,12 @@ else{
     $cart["panther"] += $_POST["panther"];
     $cart["hulk"] += $_POST["hulk"];
     $cart["ant-man"] += $_POST["ant-man"];
-}
+}*/
 
 echo "<h1> Your shopping cart </h1>";
+echo "Iron Man: $ironman1";
+//echo "<table> <tr> <th> Item </th> <th> Number in cart </th> </tr>";
+//echo "<tr> <td> Iron Man </td> <td>" . $cart['ironman'] . "</td></tr>";
 
-echo "<table> <tr> <th> Item </th> <th> Number in cart </th> </tr>";
-echo "<tr> <td> Iron Man </td> <td>" . $cart['ironman'] . "</td></tr>";
-
-echo "</table>"
+//echo "</table>"
 ?>
