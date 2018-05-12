@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping cart</title>
+</head>
+<body>
+    <h1>Your Shopping Cart</h1>
 <?php
 
 include 'makeCart.php';
@@ -18,11 +28,14 @@ echo "Spider-Man: Homecoming: $spider <br>";
 echo "Guardians of the Galaxy: $guardians1 <br>";
 echo "Guardians of the Galaxy: Volume 2: $guardians2 <br>";
 echo "Black Panther: $panther <br>";
-echo "THe Incredible Hulk: $hulk <br>";
+echo "The Incredible Hulk: $hulk <br>";
 echo "Ant-Man: $ant <br>";
 
-//echo "<table> <tr> <th> Item </th> <th> Number in cart </th> </tr>";
-//echo "<tr> <td> Iron Man </td> <td>" . $cart['ironman'] . "</td></tr>";
+?> 
 
-//echo "</table>"
-?>
+<form action="">
+    <input type="text">
+</form>
+</body>
+</html>
+
