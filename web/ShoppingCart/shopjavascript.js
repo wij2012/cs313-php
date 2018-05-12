@@ -4,7 +4,7 @@ function howMany(){
         
         document.getElementById("ironman1").value = 0;
 
-        document.getElementById("i1howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numiron1'>";
+        document.getElementById("i1howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numiron1'>";
         document.getElementById("i1howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("ironman1").checked == false){
@@ -16,7 +16,7 @@ function howMany(){
         
         document.getElementById("ironman2").value = 0;
 
-        document.getElementById("i2howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numiron2'>";
+        document.getElementById("i2howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numiron2'>";
         document.getElementById("i2howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("ironman2").checked == false){
@@ -28,7 +28,7 @@ function howMany(){
         
         document.getElementById("ironman3").value = 0;
 
-        document.getElementById("i3howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numiron3'>";
+        document.getElementById("i3howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numiron3'>";
         document.getElementById("i3howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("ironman3").checked == false){
@@ -40,7 +40,7 @@ function howMany(){
         
         document.getElementById("cap1").value = 0;
 
-        document.getElementById("c1howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numcap1'>";
+        document.getElementById("c1howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numcap1'>";
         document.getElementById("c1howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("cap1").checked == false){
@@ -52,7 +52,7 @@ function howMany(){
         
         document.getElementById("cap2").value = 0;
 
-        document.getElementById("c2howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numcap2'>";
+        document.getElementById("c2howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numcap2'>";
         document.getElementById("c2howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("cap2").checked == false){
@@ -64,7 +64,7 @@ function howMany(){
         
         document.getElementById("cap3").value = 0;
 
-        document.getElementById("c3howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numcap3'>";
+        document.getElementById("c3howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numcap3'>";
         document.getElementById("c3howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("cap3").checked == false){
@@ -76,7 +76,7 @@ function howMany(){
         
         document.getElementById("thor1").value = 0;
 
-        document.getElementById("t1howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numthor1'>";
+        document.getElementById("t1howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numthor1'>";
         document.getElementById("t1howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("thor1").checked == false){
@@ -88,7 +88,7 @@ function howMany(){
         
         document.getElementById("thor2").value = 0;
 
-        document.getElementById("t2howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numthor2'>";
+        document.getElementById("t2howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numthor2'>";
         document.getElementById("t2howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("thor2").checked == false){
@@ -100,7 +100,7 @@ function howMany(){
         
         document.getElementById("thor3").value = 0;
 
-        document.getElementById("t3howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numthor3'>";
+        document.getElementById("t3howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numthor3'>";
         document.getElementById("t3howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("thor3").checked == false){
@@ -112,7 +112,7 @@ function howMany(){
         
         document.getElementById("avengers1").value = 0;
 
-        document.getElementById("a1howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numavengers1'>";
+        document.getElementById("a1howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numavengers1'>";
         document.getElementById("a1howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("avengers1").checked == false){
@@ -124,7 +124,7 @@ function howMany(){
         
         document.getElementById("avengers2").value = 0;
 
-        document.getElementById("a2howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numavengers2'>";
+        document.getElementById("a2howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numavengers2'>";
         document.getElementById("a2howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("avengers2").checked == false){
@@ -136,7 +136,7 @@ function howMany(){
         
         document.getElementById("spider-man").value = 0;
 
-        document.getElementById("showmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numspider'>";
+        document.getElementById("showmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numspider'>";
         document.getElementById("showmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("spider-man").checked == false){
@@ -148,7 +148,7 @@ function howMany(){
         
         document.getElementById("guardians1").value = 0;
 
-        document.getElementById("g1howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numguardians1'>";
+        document.getElementById("g1howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numguardians1'>";
         document.getElementById("g1howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("guardians1").checked == false){
@@ -160,7 +160,7 @@ function howMany(){
         
         document.getElementById("guardians2").value = 0;
 
-        document.getElementById("g2howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numguardians2'>";
+        document.getElementById("g2howmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numguardians2'>";
         document.getElementById("g2howmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("guardians2").checked == false){
@@ -172,7 +172,7 @@ function howMany(){
         
         document.getElementById("panther").value = 0;
 
-        document.getElementById("phowmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numpanther'>";
+        document.getElementById("phowmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numpanther'>";
         document.getElementById("phowmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("panther").checked == false){
@@ -184,7 +184,7 @@ function howMany(){
         
         document.getElementById("hulk").value = 0;
 
-        document.getElementById("hhowmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numhulk'>";
+        document.getElementById("hhowmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numhulk'>";
         document.getElementById("hhowmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("hulk").checked == false){
@@ -196,7 +196,7 @@ function howMany(){
         
         document.getElementById("ant-man").value = 0;
 
-        document.getElementById("amhowmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numant'>";
+        document.getElementById("amhowmany").innerHTML = "Input the amount of this item you wish to purchase. <br> <input type='text' id='numant'>";
         document.getElementById("amhowmany").innerHTML += "<br> <input type='button' value='Add this many to your cart' onclick='add()'>";
     }
     else if(document.getElementById("ant-man").checked == false){
