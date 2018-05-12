@@ -13,7 +13,7 @@ include 'printCart.php';
 ?>
 
 <form action="confirmation.php" method="get">
-<textarea name="address" rows="20" cols="5" placeholder="Enter the address for your delivery here.">
+<textarea name="address" rows="20" cols="5" placeholder="Enter the address for your delivery here."></textarea>
 <input type="submit">
 </form>
 </body>
