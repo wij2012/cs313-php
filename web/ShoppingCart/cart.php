@@ -156,6 +156,23 @@ else {
     $_SESSION[$key_ant] += $_GET["ant-man"];
 }
 
+$ironman1 = $_SESSION[$key_ironman1];
+$ironman2 = $_SESSION[$key_ironman2];
+$ironman3 = $_SESSION[$key_ironman3];
+$cap1 = $_SESSION[$key_cap1];
+$cap2 = $_SESSION[$key_cap2];
+$cap3 = $_SESSION[$key_cap3];
+$thor1 = $_SESSION[$key_thor1];
+$thor2 = $_SESSION[$key_thor2];
+$thor3 = $_SESSION[$key_thor3];
+$avengers1 = $_SESSION[$key_avengers1];
+$avengers2 = $_SESSION[$key_avengers2];
+$spider = $_SESSION[$key_spider];
+$guardians1 = $_SESSION[$key_guardians1];
+$guardians2 = $_SESSION[$key_guardians2];
+$panther = $_SESSION[$key_panther];
+$hulk = $_SESSION[$key_hulk];
+$ant = $_SESSION[$key_ant];
 
 echo "<h1> Your shopping cart </h1>";
 echo "Iron Man: $ironman1 <br>";
@@ -167,8 +184,8 @@ echo "Captain America: Civil War: $cap3 <br>";
 echo "Thor: $thor1 <br>";
 echo "Thor: The Dark World: $thor2 <br>";
 echo "Thor: Ragnarok: $thor3 <br>";
-echo "Avengers: $Avengers1 <br>";
-echo "Avengers: Age of Ultron: $Avengers2 <br>";
+echo "Avengers: $avengers1 <br>";
+echo "Avengers: Age of Ultron: $avengers2 <br>";
 echo "Spider-Man: Homecoming: $spider <br>";
 echo "Guardians of the Galaxy: $guardians1 <br>";
 echo "Guardians of the Galaxy: Volume 2: $guardians2 <br>";
