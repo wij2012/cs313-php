@@ -327,3 +327,40 @@ function add(){
 
     
 }
+
+function buildQuerySthing()
+      {
+         var queryString = "assign12.php?ironman1=";
+         queryString += document.getElementById("ironman1").value;
+         queryString += "?ironman2=" + document.getElementById("ironman3").value;
+         queryString += "?ironman3=" + document.getElementById("ironman3").value;
+         queryString += "?cap1=" + document.getElementById("cap1").value;
+         queryString += "?cap2=" + document.getElementById("cap2").value;
+         queryString += "?cap3=" + document.getElementById("cap3").value;
+         queryString += "?thor1=" + document.getElementById("thor1").value;
+         queryString += "?thor2=" + document.getElementById("thor2").value;
+         queryString += "?thor3=" + document.getElementById("thor3").value;
+         queryString += "?avengers1=" + document.getElementById("avengers1").value;
+         queryString += "?avengers2=" + document.getElementById("avengers2").value;
+         queryString += "?spider-man=" + document.getElementById("spider-man").value;
+         queryString += "?guardians1=" + document.getElementById("guardians1").value;
+         queryString += "?guardian2=" + document.getElementById("guardians2").value;
+         queryString += "?panther=" + document.getElementById("panther").value;
+         queryString += "?hulk=" + document.getElementById("hulk").value;
+         queryString += "?ant-man=" + document.getElementById("ant-man").value;
+         
+         console.log('queryString = ' + queryString);
+         
+         return querySthing;
+      }
+
+function sendRequest(){
+    var xhttp = new XMLHttpRequest(); 
+    xhttp.onload = function() {
+         if (this.readyState == 4 && this.status == 200) { 
+            var query = buildQueryString
+            xhttp.open("GET", query, true);
+            xhttp.send();
+            }
+        }
+    }
