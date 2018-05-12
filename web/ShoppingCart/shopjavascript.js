@@ -1,7 +1,7 @@
 function howMany(){
     if(document.getElementById("ironman1").checked == true){
         
-        //document.getElementById("ironman1").value = 1;
+        document.getElementById("ironman1").value = 0;
         //document.getElementById("testing").innerHTML = document.getElementById("ironman1").value; 
 
         document.getElementById("i1howmany").innerHTML = "Input the amount of this item you wish to purchase. <input type='text' id='numiron1'>";
@@ -10,7 +10,9 @@ function howMany(){
 }
 
 function add(){
+    if(document.getElementById("ironman1").value >= 0){
     document.getElementById("ironman1").value += document.getElementById("numiron1").value;
-    
+
     document.getElementById("testing").innerHTML = document.getElementById("ironman1").value; 
+    }
 }
