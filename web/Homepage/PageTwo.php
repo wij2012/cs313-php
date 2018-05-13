@@ -15,9 +15,6 @@
     <br>
     
     <div class="list"> The links to  
-        <br> my assignments for 
-        <br> cs 313 will 
-        <br> go here.
-    </div> 
+        <a href="web/ShoppingCart/shop.html"> My Shopping Cart </a>
 </body>
 </html>
