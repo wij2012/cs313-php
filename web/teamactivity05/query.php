@@ -24,12 +24,12 @@
     
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    foreach ($db->query('SELECT, * FROM scripture') as $row)
-{
-  echo '<div><b>' . $row['book'] . " " . $row['chapter'] . ':' . $row['verse'] . '</b> </div>';
-  echo ' - ' . $row['text']; 
-  echo '<br/>';
-}
+    foreach ($db->query('SELECT * FROM scripture') as $row)
+    {
+        echo '<div><b>' . $row['book'] . " " . $row['chapter'] . ':' . $row['verse'] . '</b> </div>';
+        echo ' - ' . $row['text']; 
+        echo '<br/>';
+    }
     ?>
 </body>
 </html>
