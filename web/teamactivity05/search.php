@@ -28,7 +28,7 @@
 
     foreach ($db->query('SELECT * FROM scripture') as $row)
     {
-        if($search=$row["book"])
+        if($search==$row["book"])
         {
             echo '<div><b>' . $row['book'] . " " . $row['chapter'] . ':' . $row['verse'] . '</b> </div>';
         }
