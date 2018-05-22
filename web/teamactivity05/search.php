@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Search results</h1>
+
     <?php
     $search = $_POST["search"];
     

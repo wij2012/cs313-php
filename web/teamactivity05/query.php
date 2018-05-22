@@ -32,11 +32,10 @@
     }
     ?>
 
-    <form>
-        
+    <form method="POST" action="search.php">
+        <input type="text" name="search"> 
+        <input type="submit">
     </form>
-    <?php
-        echo '<h2> Search for Book </h2>'
-    ?>
+
 </body>
 </html>
