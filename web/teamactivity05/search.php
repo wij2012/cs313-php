@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Database scriptures</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Scripture Resources</h1>
-
+    <h1>Search results</h1>
     <?php
+    $search = $_POST["search"];
+    
     $dbUrl = getenv('DATABASE_URL');
 
     $dbopts = parse_url($dbUrl);
@@ -26,17 +27,11 @@
 
     foreach ($db->query('SELECT * FROM scripture') as $row)
     {
-        echo '<div><b>' . $row['book'] . " " . $row['chapter'] . ':' . $row['verse'] . '</b> </div>';
-        echo ' - ' . $row['text']; 
-        echo '<br/>';
+        if($search=$row["book"])
+        {
+            echo '<div><b>' . $row['book'] . " " . $row['chapter'] . ':' . $row['verse'] . '</b> </div>';
+        }
     }
-    ?>
-
-    <form>
-        
-    </form>
-    <?php
-        echo '<h2> Search for Book </h2>'
     ?>
 </body>
 </html>
