@@ -32,15 +32,17 @@
 <body>
     <h1>Movies</h1>
     <ul>
-        <li>;adjfglksjdfgkljdshfg</li>
-        <li>;adjfglksjdfgkljdshfg</li>
-        <li>;adjfglksjdfgkljdshfg</li>
-        <li>;adjfglksjdfgkljdshfg</li>
-        <li>;adjfglksjdfgkljdshfg</li>
+    <?php
+        $query = "SELECT * FROM movies m INNER JOIN ratings r ON m.rating_id = r.id;";
+        foreach($db->query($query) as $movie){
+            $title = $movie["title"];
+            $year = $movie["year"];
+            $rating = $movie["rating"];
+            echo "<li>$title, ($year), $rating </li>";
+        }
+    ?>
     </ul>
 
-    <?php
     
-    ?>
 </body>
 </html>
