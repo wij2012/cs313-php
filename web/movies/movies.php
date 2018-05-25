@@ -35,9 +35,10 @@
     <?php
         $user_rating = $_GET["rating"];
         
-        $query = "SELECT * FROM movies m INNER JOIN ratings r ON m.rating_id = r.id WHERE r.code = ':rating';";
+        $query = "SELECT m.title, m.year, r.code FROM movies m INNER JOIN ratings r ON m.rating_id = r.id WHERE r.code = ':rating';";
         $statement = $db->prepare($query);
         $statement.bindvalue(":rating", $user_rating, PDO::PARAM_STR);
+        $statement->execute();
 
         foreach($statement->fetchall(PDO::FETCH_ASSOC) as $movie){
             $title = $movie["title"];
