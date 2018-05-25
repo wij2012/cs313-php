@@ -43,7 +43,7 @@
         }
         else if($table == 'matches'){
             echo '<div><strong>Matches</strong> <br>';
-            echo '<table><th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th>';
+            echo '<table><tr><th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>';
             foreach ($db->query('SELECT * FROM match') as $row)
             {
                 echo '<tr>' . $row['player1'] . '</tr>';
@@ -56,7 +56,7 @@
 
         else if($table == 'comments'){
             echo '<div><strong>Players</strong> <br>';
-            echo '<table><th> Match </th> <th> Commenter </th> <th> Comment </th>';
+            echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
             foreach ($db->query('SELECT * FROM comments') as $row)
             {
                 echo '<tr>' . $row['match_id'] . '</tr>';
