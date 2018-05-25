@@ -41,6 +41,30 @@
             }
             echo '</div>';
         }
+        else if($table == 'matches'){
+            echo '<div><strong>Matches</strong> <br>';
+            echo '<table><th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th>';
+            foreach ($db->query('SELECT * FROM match') as $row)
+            {
+                echo '<tr>' . $row['player1'] . '</tr>';
+                echo '<tr>' . $row['player2'] . '</tr>';
+                echo '<tr>' . $row['winner'] . '</tr>';
+                echo '<tr>' . $row['date'] . '</tr>';
+            }
+            echo '</table> </div>';
+        }
+
+        else if($table == 'comments'){
+            echo '<div><strong>Players</strong> <br>';
+            echo '<table><th> Match </th> <th> Commenter </th> <th> Comment </th>';
+            foreach ($db->query('SELECT * FROM comments') as $row)
+            {
+                echo '<tr>' . $row['match_id'] . '</tr>';
+                echo '<tr>' . $row['commentor'] . '</tr>';
+                echo '<tr>' . $row['text'] . '</tr>';
+            }
+            echo '</table> </div>';
+        }
             
     ?>
 
