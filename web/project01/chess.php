@@ -33,6 +33,7 @@
     <h1>Chess Club Game Records</h1>
     <?php
         $table = $_POST["table"];
+
         if($table == 'players'){
             echo '<div><strong>Players</strong> <br>';
             foreach ($db->query('SELECT * FROM players') as $row)
@@ -46,10 +47,10 @@
             echo '<table><tr><th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>';
             foreach ($db->query('SELECT * FROM match') as $row)
             {
-                echo '<tr>' . $row['player1'] . '</tr>';
-                echo '<tr>' . $row['player2'] . '</tr>';
-                echo '<tr>' . $row['winner'] . '</tr>';
-                echo '<tr>' . $row['date'] . '</tr>';
+                echo '<tr><td>' . $row['player1'] . '</td>';
+                echo '<td>' . $row['player2'] . '</td>';
+                echo '<td>' . $row['winner'] . '</td>';
+                echo '<td>' . $row['date'] . '</td></tr>';
             }
             echo '</table> </div>';
         }
@@ -59,9 +60,9 @@
             echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
             foreach ($db->query('SELECT * FROM comments') as $row)
             {
-                echo '<tr>' . $row['match_id'] . '</tr>';
-                echo '<tr>' . $row['commentor'] . '</tr>';
-                echo '<tr>' . $row['text'] . '</tr>';
+                echo '<tr><td>' . $row['match_id'] . '</td>';
+                echo '<td>' . $row['commentor'] . '</td>';
+                echo '<td>' . $row['text'] . '/<td></tr>';
             }
             echo '</table> </div>';
         }
