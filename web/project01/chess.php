@@ -32,15 +32,24 @@
 <body>
     <h1>Chess Club Game Records</h1>
     <?php
-    
+        $table = $_POST["table"];
+        if($table == 'players'){
+            echo '<div><strong>Players</strong> <br>';
+            foreach ($db->query('SELECT * FROM players') as $row)
+            {
+                echo $row['name'] . ' <br>';
+            }
+            echo '</div>';
+        }
+            
     ?>
 
     <p>Select a table to display (raw data)</p>
     <form action="chess.php" method="post">
-        <select name="" id="">
-            <option value="players"></option>
-            <option value="matches"></option>
-            <option value="comments"></option>
+        <select name="table">
+            <option value="players"> Players </option>
+            <option value="matches"> Matches </option>
+            <option value="comments"> Comments </option>
         </select>
         <input type="submit">
     </form>
