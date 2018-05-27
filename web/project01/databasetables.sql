@@ -62,3 +62,7 @@ ON p2.id = match.player2
 INNER JOIN players p3
 ON p3.id = match.winner;
 
+--
+SELECT player.name
+, 
+
