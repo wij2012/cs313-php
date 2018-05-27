@@ -78,7 +78,7 @@
             foreach ($db->query('SELECT * FROM comments') as $row)
             {
                 echo '<tr><td>' . $row['match_id'] . '</td>';
-                echo '<td>' . $row['commentor'] . '</td>';
+                echo '<td>' . $row['commenter'] . '</td>';
                 echo '<td>' . $row['text'] . '/<td></tr>';
             }
             echo '</table> </div>';
