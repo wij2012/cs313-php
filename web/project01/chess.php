@@ -46,14 +46,14 @@
         else if($table == 'matches'){
             echo '<div><strong>Matches</strong> <br>';
             echo '<table><tr><th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>';
-            /*foreach ($db->query('SELECT * FROM match;') as $row)
+            foreach ($db->query('SELECT * FROM match;') as $row)
             {
                 echo '<tr><td>' . $row['player1'] . '</td>';
                 echo '<td>' . $row['player2'] . '</td>';
                 echo '<td>' . $row['winner'] . '</td>';
                 echo '<td>' . $row['date'] . '</td></tr>';
-            }*/
-            foreach ($db->query('SELECT match.id
+            }
+            /*foreach ($db->query('SELECT match.id
             , p1.name
             , p2.name
             , p3.name
@@ -68,7 +68,7 @@
                 echo '<td>' . $row['p2.name'] . '</td>';
                 echo '<td>' . $row['p3.name'] . '</td>';
                 echo '<td>' . $row['match.date'] . '</td></tr>';
-            }
+            }*/
             echo '</table> </div>';
         }
 
@@ -93,17 +93,6 @@
             <option value="matches"> Matches </option>
             <option value="comments"> Comments </option>
         </select>
-        <input type="submit">
-    </form>
-
-    <?php
-        $player_name = $_POST["player_name"];
-
-    ?>
-
-    <p></p>
-    <form action="chess.php" method="post">
-        <input type="text" name="player_name">
         <input type="submit">
     </form>
     
