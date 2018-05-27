@@ -42,15 +42,32 @@
             }
             echo '</div>';
         }
+    
         else if($table == 'matches'){
             echo '<div><strong>Matches</strong> <br>';
             echo '<table><tr><th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>';
-            foreach ($db->query('SELECT * FROM match') as $row)
+            /*foreach ($db->query('SELECT * FROM match;') as $row)
             {
                 echo '<tr><td>' . $row['player1'] . '</td>';
                 echo '<td>' . $row['player2'] . '</td>';
                 echo '<td>' . $row['winner'] . '</td>';
                 echo '<td>' . $row['date'] . '</td></tr>';
+            }*/
+            foreach ($db->query('SELECT match.id
+            , p1.name
+            , p2.name
+            , p3.name
+            , match.date FROM players p1 INNER JOIN match 
+            ON p1.id = match.player1
+            INNER JOIN players p2 
+            ON p2.id = match.player2
+            INNER JOIN players p3
+            ON p3.id = match.winner;') as $row){
+                echo '<tr><td>' . $row['match.id'] . '</tr>';
+                echo '<tr><td>' . $row['p1.name'] . '</tr>';
+                echo '<tr><td>' . $row['p2.name'] . '</tr>';
+                echo '<tr><td>' . $row['p3.name'] . '</tr>';
+                echo '<tr><td>' . $row['match.date'] . '</tr>';
             }
             echo '</table> </div>';
         }
@@ -78,5 +95,17 @@
         </select>
         <input type="submit">
     </form>
+
+    <?php
+        $player_name = $_POST["player_name"];
+
+    ?>
+
+    <p></p>
+    <form action="chess.php" method="post">
+        <input type="text" name="player_name">
+        <input type="submit">
+    </form>
+    
 </body>
 </html>
