@@ -46,29 +46,29 @@
         else if($table == 'matches'){
             echo '<div><strong>Matches</strong> <br>';
             echo '<table><tr><th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>';
-            foreach ($db->query('SELECT * FROM match;') as $row)
+            /*foreach ($db->query('SELECT * FROM match;') as $row)
             {
                 echo '<tr><td>' . $row['player1'] . '</td>';
                 echo '<td>' . $row['player2'] . '</td>';
                 echo '<td>' . $row['winner'] . '</td>';
                 echo '<td>' . $row['date'] . '</td></tr>';
-            }
-            /*foreach ($db->query('SELECT match.id
-            , p1.name
-            , p2.name
-            , p3.name
+            }*/
+            foreach ($db->query('SELECT match.id
+            , p1.name AS p1N
+            , p2.name AS p2N
+            , p3.name AS p3N
             , match.date FROM players p1 INNER JOIN match 
             ON p1.id = match.player1
             INNER JOIN players p2 
             ON p2.id = match.player2
             INNER JOIN players p3
             ON p3.id = match.winner;') as $row){
-                echo '<tr><td>' . $row['match.id'] . '</td>';
-                echo '<td>' . $row['p1.name'] . '</td>';
-                echo '<td>' . $row['p2.name'] . '</td>';
-                echo '<td>' . $row['p3.name'] . '</td>';
-                echo '<td>' . $row['match.date'] . '</td></tr>';
-            }*/
+                echo '<tr><td>' . $row['id'] . '</td>';
+                echo '<td>' . $row['p1N'] . '</td>';
+                echo '<td>' . $row['p2N'] . '</td>';
+                echo '<td>' . $row['p3N'] . '</td>';
+                echo '<td>' . $row['date'] . '</td></tr>';
+            }
             echo '</table> </div>';
         }
 
