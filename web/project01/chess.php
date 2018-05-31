@@ -86,9 +86,9 @@
             , comments.match_id
             , comments.text FROM players INNER JOIN comments
             ON comments.commenter = players.id;') as $row){
-                echo '<tr><td>' . $row['match_id'] . '<td>';
-                echo '<td>' . $row['name'] . '<td>';
-                echo '<td>' . $row['text'] . '<td></tr>';
+                echo '<tr><td>' . $row['match_id'] . '</td>';
+                echo '<td>' . $row['name'] . '</td>';
+                echo '<td>' . $row['text'] . '</td></tr>';
             }
             echo '</table> </div>';
         }
