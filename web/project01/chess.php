@@ -65,9 +65,9 @@
             INNER JOIN players p3
             ON p3.id = match.winner;") as $row){
                 echo "<tr><td>" . $row["id"] . "</td>";
-                echo "<td>" . $row["p1N"] . "</td>";
-                echo "<td>" . $row["p2N"] . "</td>";
-                echo "<td>" . $row["p3N"] . "</td>";
+                echo "<td>" . $row["p1.name"] . "</td>";
+                echo "<td>" . $row["p2.name"] . "</td>";
+                echo "<td>" . $row["p3.name"] . "</td>";
                 echo "<td>" . $row["date"] . "</td></tr>";
             }
             echo "</table> </div>";
