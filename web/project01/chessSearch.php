@@ -31,6 +31,26 @@
 </head>
 <body>
     <h1>Search for Chess games, players, or comments</h1>
-    
+
+    <?php
+    //need a drop menu to say what table i'm seraching
+
+
+    // need an input box to type wht is being searched
+    ?>
+
+    <form action="chessSearch.php" method="post">
+        <div> Are you searching for a player's games or comments on games? </div>
+        <select name="table">
+            <option value="matches"> Matches </option>
+            <option value="comments"> Comments </option>
+        </select>
+        <br> <br>
+        
+        <?php $table = $_POST["table"];
+        echo "<div>Enter the player whose $table you are searching.</div>"; 
+        ?>
+        <input type="text">
+    </form>
 </body>
 </html>
