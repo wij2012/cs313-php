@@ -82,6 +82,7 @@
                 echo '<td>' . $row['text'] . '/<td></tr>';
             }*/
             foreach ($db->query('SELECT players.name
+            , comments.match_id
             , comments.text FROM players INNER JOIN comments
             ON comments.commenter = players.id;') as $row){
                 echo '<tr><td>' . $row['match_id'] . '<td>';
