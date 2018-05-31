@@ -27,6 +27,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
@@ -36,10 +37,10 @@
     //need a drop menu to say what table i'm seraching
 
 
-    // need an input box to type wht is being searched
+    // need an input box to type who is being searched
     ?>
 
-    <form action="chessSearch.php" method="post">
+    <form action="playerSearch.php" method="post">
         <div> Are you searching for a player's games or comments on games? </div>
         <select name="table">
             <option value="matches"> Matches </option>
@@ -47,10 +48,9 @@
         </select>
         <br> <br>
         
-        <?php $table = $_POST["table"];
-        echo "<div>Enter the player whose $table you are searching.</div>"; 
-        ?>
+        <div> Enter the name of the player who you are searching </div>
         <input type="text">
+        <input type="submit">
     </form>
 </body>
 </html>
