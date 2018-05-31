@@ -46,7 +46,7 @@
     
         else if($table == 'matches'){
             echo '<div><strong>Matches</strong> <br>';
-            echo '<table><tr><th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>';
+            echo '<table><tr><th>Match ID Number</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>';
             /*foreach ($db->query('SELECT * FROM match;') as $row)
             {
                 echo '<tr><td>' . $row['player1'] . '</td>';
