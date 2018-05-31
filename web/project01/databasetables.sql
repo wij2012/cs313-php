@@ -12,7 +12,7 @@ CREATE TABLE match
     id SERIAL PRIMARY KEY,
     player1 INT REFERENCES players(id) NOT NULL,
     player2 INT REFERENCES players(id) NOT NULL,
-    winner  INT NOT NULL,
+    winner  INT REFERENCES players(id) NOT NULL,
     "date" date
 );
 
@@ -42,7 +42,7 @@ CREATE TABLE comments
 
 --enter some comments on a match
 INSERT INTO comments(match_id, commenter, text) VALUES ('2', '4', 'Can''t wait to get in on the action after seeing Billy vs Billy!');
-INSERT INTO comments(match_id, commenter, text) VALUES ('4', '3', 'CLose game!');
+INSERT INTO comments(match_id, commenter, text) VALUES ('4', '3', 'Close game!');
 INSERT INTO comments(match_id, commenter, text) VALUES ('3', '2', 'Suprise win!!!!');
 
 
@@ -62,7 +62,8 @@ ON p2.id = match.player2
 INNER JOIN players p3
 ON p3.id = match.winner;
 
---
-SELECT player.name
-, 
+--display the comments table 
+SELECT players.name
+, comments.text FROM players INNER JOIN comments
+ON comments.commenter = players.id;
 

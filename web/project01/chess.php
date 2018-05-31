@@ -75,11 +75,18 @@
         else if($table == 'comments'){
             echo '<div><strong>Players</strong> <br>';
             echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
-            foreach ($db->query('SELECT * FROM comments') as $row)
+            /*foreach ($db->query('SELECT * FROM comments') as $row)
             {
                 echo '<tr><td>' . $row['match_id'] . '</td>';
                 echo '<td>' . $row['commenter'] . '</td>';
                 echo '<td>' . $row['text'] . '/<td></tr>';
+            }*/
+            foreach ($db->query('SELECT players.name
+            , comments.text FROM players INNER JOIN comments
+            ON comments.commenter = players.id;') as $row){
+                echo '<tr><td>' . $row['match_id'] . '<td>';
+                echo '<td>' . $row['name'] . '<td>';
+                echo '<td>' . $row['text'] . '<td></tr>';
             }
             echo '</table> </div>';
         }
