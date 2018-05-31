@@ -33,7 +33,7 @@
 </head>
 <body>
     <h1>View All Games, Players, or Comments</h1>
-    
+
     <?php
         $table = $_POST["table"];
 
@@ -86,7 +86,7 @@
     ?>
 
     <p>Select a table to display (raw data)</p>
-    <form action="chess.php" method="post">
+    <form action="chessAll.php" method="post">
         <select name="table">
             <option value="players"> Players </option>
             <option value="matches"> Matches </option>
