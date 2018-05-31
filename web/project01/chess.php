@@ -27,6 +27,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Chess Games</title>
 </head>
 <body>
@@ -73,7 +74,7 @@
         }
 
         else if($table == 'comments'){
-            echo '<div><strong>Players</strong> <br>';
+            echo '<div><strong>Comments</strong> <br>';
             echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
             /*foreach ($db->query('SELECT * FROM comments') as $row)
             {
