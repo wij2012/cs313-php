@@ -1,4 +1,5 @@
 <?php
+    include 'navbar.php';
     try{
      $dbUrl = getenv('DATABASE_URL');
 
@@ -31,7 +32,8 @@
     <title>Chess Games</title>
 </head>
 <body>
-    <h1>Chess Club Game Records</h1>
+    <h1>View All Games, Players, or Comments</h1>
+    
     <?php
         $table = $_POST["table"];
 
@@ -47,13 +49,6 @@
         else if($table == 'matches'){
             echo "<div><strong>Matches</strong> <br>";
             echo "<table><tr><th>Match ID Number</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
-            /*foreach ($db->query('SELECT * FROM match;') as $row)
-            {
-                echo '<tr><td>' . $row['player1'] . '</td>';
-                echo '<td>' . $row['player2'] . '</td>';
-                echo '<td>' . $row['winner'] . '</td>';
-                echo '<td>' . $row['date'] . '</td></tr>';
-            }*/
             foreach ($db->query("SELECT match.id
             , p1.name AS p1N
             , p2.name AS p2N
@@ -77,12 +72,6 @@
         else if($table == 'comments'){
             echo '<div><strong>Comments</strong> <br>';
             echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
-            /*foreach ($db->query('SELECT * FROM comments') as $row)
-            {
-                echo '<tr><td>' . $row['match_id'] . '</td>';
-                echo '<td>' . $row['commenter'] . '</td>';
-                echo '<td>' . $row['text'] . '/<td></tr>';
-            }*/
             foreach ($db->query('SELECT players.name
             , comments.match_id
             , comments.text FROM players INNER JOIN comments
