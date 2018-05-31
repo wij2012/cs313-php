@@ -9,9 +9,8 @@
 <body>
 <h1>Chess Club Game Records</h1>
 <div class="navbar"> 
-        
-         <a href="chessAll.php"> Home </a> 
-         <a href="chessSearch.php"> Assignments Index </a>
+         <a href="chessAll.php"> See all Records </a> 
+         <a href="chessSearch.php"> Search Records </a>
     </div>
 </body>
 </html>
