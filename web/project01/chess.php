@@ -58,9 +58,7 @@
             , match.date FROM players INNER JOIN match 
             ON (players.id = match.player1 OR players.id = match.player2) AND players.id = match.winner;") as $row){
                 echo "<tr><td>" . $row["id"] . "</td>";
-                echo "<td>" . $row["p1N"] . "</td>";
-                echo "<td>" . $row["p2N"] . "</td>";
-                echo "<td>" . $row["p3N"] . "</td>";
+                echo "<td>" . $row["name"] . "</td>";
                 echo "<td>" . $row["date"] . "</td></tr>";
             }
             echo "</table> </div>";
