@@ -52,15 +52,13 @@ INSERT INTO comments(match_id, commenter, text) VALUES ('3', '2', 'Suprise win!!
 --display the names of players and winners and date of each match
 --winners displayed as third player column
 SELECT match.id
-, p1.name
-, p2.name
-, p3.name
-, match.date FROM players p1 INNER JOIN match 
-ON p1.id = match.player1
-INNER JOIN players p2 
+, players.name
+, match.date FROM players INNER JOIN match 
+ON (players.id = match.player1 OR players.id = match.player2) AND players.id = match.winner;
+/*INNER JOIN players p2 
 ON p2.id = match.player2
 INNER JOIN players p3
-ON p3.id = match.winner;
+ON p3.id = match.winner;*/
 
 --display the comments table 
 SELECT players.name

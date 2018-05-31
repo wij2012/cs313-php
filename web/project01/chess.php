@@ -54,15 +54,9 @@
                 echo '<td>' . $row['date'] . '</td></tr>';
             }*/
             foreach ($db->query("SELECT match.id
-            , p1.name AS p1N
-            , p2.name AS p2N
-            , p3.name AS p3N
-            , match.date FROM players p1 INNER JOIN match 
-            ON p1.id = match.player1
-            INNER JOIN players p2 
-            ON p2.id = match.player2
-            INNER JOIN players p3
-            ON p3.id = match.winner;") as $row){
+            , players.name
+            , match.date FROM players INNER JOIN match 
+            ON (players.id = match.player1 OR players.id = match.player2) AND players.id = match.winner;") as $row){
                 echo "<tr><td>" . $row["id"] . "</td>";
                 echo "<td>" . $row["p1N"] . "</td>";
                 echo "<td>" . $row["p2N"] . "</td>";
