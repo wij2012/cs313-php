@@ -31,9 +31,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Search for Chess games, players, or comments</h1>
+    <h1>Search Players' games and comments </h1>
 
     <?php
+        $table = $_POST["table"];
+
+        if($table == 'matches'){
+            foreach($db->query('SELECT * FROM players WHERE players.name = $table;') as $row){
+                echo " id = " . $row['id'];
+                echo "name = " . $row['name'];
+            }
+        }
+
+        else if($table == 'comments'){
+
+        }
     //need a drop menu to say what table i'm seraching
 
 
@@ -50,6 +62,7 @@
         
         <div> Enter the name of the player who you are searching </div>
         <input type="text">
+        <br><br>
         <input type="submit">
     </form>
 </body>
