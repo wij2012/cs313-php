@@ -33,7 +33,7 @@
 <body>
     <h1>Create a new Player </h1>
     <?php
-    $player = $_POST["playerName"];
+    $player = $_POST['playerName'];
 
     /*$db->query("INSERT INTO players(name) VALUES($player)");
     echo '<div><strong>Players</strong> <br>';*/
