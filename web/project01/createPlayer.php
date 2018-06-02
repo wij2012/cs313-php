@@ -40,6 +40,7 @@
     $statement = $db->prepare($query);
     $statement->bindValue(":name", $player, PDO::PARAM_STR);
     $statement->execute();
+    header("Location: createPlayer.php?playerName=$player");
     die();
     }
     
