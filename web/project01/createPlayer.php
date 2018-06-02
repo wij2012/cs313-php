@@ -33,14 +33,13 @@
 <body>
     <h1>Create a new Player </h1>
     <?php
-    $player = $_POST["playerName"];
+    $player = htmlspecialchars($_POST["playerName"]);
 
     if(!empty($player)){
     $query = "INSERT INTO players(name) VALUES (:name)";
     $statement = $db->prepare($query);
     $statement->bindValue(":name", $player, PDO::PARAM_STR);
     $statement->execute();
-    header("Location: createPlayer.php?playerName=$player");
     die();
     }
     
