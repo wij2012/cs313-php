@@ -36,9 +36,10 @@
     <?php
         $table = $_POST["table"];
 
+        //this link might help with this part https://www.youtube.com/watch?v=GJIBL87w_1Y
         if($table == 'matches'){
             foreach($db->query('SELECT * FROM players WHERE players.name = $table;') as $row){
-                echo " id = " . $row['id'];
+                echo "id = " . $row['id'];
                 echo "name = " . $row['name'];
             }
         }
