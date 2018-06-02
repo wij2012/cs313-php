@@ -33,12 +33,21 @@
 <body>
     <h1>Create a new Player </h1>
     <?php
-    
+    $player = $_POST["playerName"];
+
+    $db->query("INSERT INTO players(name) VALUES($player)");
+    echo '<div><strong>Players</strong> <br>';
+    foreach ($db->query('SELECT * FROM players') as $row)
+    {
+        echo $row['name'] . ' <br>';
+    }
+    echo '</div>';
     ?>
 
     <form action="createPlayer.php" action="post">
     <div>Input the new Player's name</div>
-    <input type="text">
+    <input type="text" name="playerName">
+    <br>
     <input type="submit">
     </form>
 </body>

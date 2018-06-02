@@ -48,7 +48,7 @@
 
     <div>Date:</div>
     <input type="text">
-
+    <br>
     <input type="submit">
     </form>
 </body>

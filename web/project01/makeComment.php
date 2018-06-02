@@ -37,7 +37,12 @@
     ?>
 
     <form action="makeComment.php" action="post">
-    <div>NOTICE: You must be a player listed on our website to make a comment on one of our chess matches</div>
+    <div>
+    NOTICE: You must be a player listed on our website to make a comment on one of our chess matches
+    <br> You can see if your name is listed in our database by clicling on the 'See all Records' link
+    <br> at the top of the page and selecting Players.
+    <br>
+    </div>
     <div>Input the match ID Number (See all Records and select Match to check Match ID)</div>
     <input type="text">
 
@@ -46,6 +51,7 @@
 
     <div>Enter your comment here</div>
     <input type="text">
+    <br>
     <input type="submit">
     </form>
 </body>
