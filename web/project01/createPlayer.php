@@ -37,7 +37,7 @@
 
     /*$db->query("INSERT INTO players(name) VALUES($player)");
     echo '<div><strong>Players</strong> <br>';*/
-    $db = get_db();
+    //$db = get_db();
     $query = "INSERT INTO players(name) VALUES (:name)";
     $statement = $db->prepare($query);
     $statement->bindValue(":name", $name, PDO::PARAM_INT);
