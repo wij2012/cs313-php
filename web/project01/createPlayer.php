@@ -35,13 +35,31 @@
     <?php
     $player = $_POST["playerName"];
 
-    $db->query("INSERT INTO players(name) VALUES($player)");
-    echo '<div><strong>Players</strong> <br>';
+    /*$db->query("INSERT INTO players(name) VALUES($player)");
+    echo '<div><strong>Players</strong> <br>';*/
+    $db = get_db();
+    $query = "INSERT INTO players(name) VALUES (:name)";
+    $statement = $db->prepare($query);
+    $statement->bindValue(":name", $name, PDO::PARAM_INT);
+    $statement->execute();
     foreach ($db->query('SELECT * FROM players') as $row)
     {
         echo $row['name'] . ' <br>';
     }
     echo '</div>';
+    /*
+    require("dbConnect.php");
+$db = get_db();
+$query = "INSERT INTO note (course_id, content, date) VALUES (:courseId, :content, :date)";
+$statement = $db->prepare($query);
+$statement->bindValue(":courseId", $courseId, PDO::PARAM_INT);
+$statement->bindValue(":content", $content, PDO::PARAM_STR);
+$statement->bindValue(":date", $date, PDO::PARAM_STR);
+$statement->execute();
+header("Location: courseDetails.php?course_id=$courseId");
+die();
+
+    */
     ?>
 
     <form action="createPlayer.php" action="post">
