@@ -35,12 +35,14 @@
     <?php
     $player = $_POST["playerName"];
 
-   
+    if($player != ""){
     $query = "INSERT INTO players(name) VALUES (:name)";
     $statement = $db->prepare($query);
     $statement->bindValue(":name", $player, PDO::PARAM_STR);
     $statement->execute();
     die();
+    }
+    
     echo '<div><strong>Players</strong> <br>';
     foreach ($db->query('SELECT * FROM players') as $row)
     {
