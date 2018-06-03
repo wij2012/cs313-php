@@ -36,7 +36,7 @@
     $player = htmlspecialchars($_POST["playerName"]);
     echo $player;
     if(!empty($player)){
-    $query = "INSERT INTO players('name') VALUES (':name')";
+    $query = "INSERT INTO players(name) VALUES (:name)";
     $statement = $db->prepare($query);
     $statement->bindValue(":name", $player, PDO::PARAM_STR);
     $statement->execute();
