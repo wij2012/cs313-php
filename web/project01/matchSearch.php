@@ -37,6 +37,7 @@
     $id = $_POST["matchID"];
 
     if(!empty($id)){
+        //print the match data 
         $query = "SELECT match.id
         , p1.name AS p1N
         , p2.name AS p2N
@@ -54,6 +55,8 @@
 
         $match = $statement->fetch();
 
+
+        //print the comments on the given match
         echo "<table><tr><th>Match ID Number</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
         echo "<tr><td>" . $match["id"] . "</td>";
         echo "<td>" . $match["p1n"] . "</td>";
@@ -71,11 +74,11 @@
         $statement->bindValue(":id", $id, PDO::PARAM_INT);
         $statement->execute();
 
-        $match = $statement->fetch();
+        $comments = $statement->fetch();
         echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
-        echo '<tr><td>' . $row['match_id'] . '</td>';
-        echo '<td>' . $row['name'] . '</td>';
-        echo '<td>' . $row['text'] . '</td></tr>';
+        echo '<tr><td>' . $comments['match_id'] . '</td>';
+        echo '<td>' . $comments['name'] . '</td>';
+        echo '<td>' . $comments['text'] . '</td></tr>';
         echo "</table> </div>";
 
         }
