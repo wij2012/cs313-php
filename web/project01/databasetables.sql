@@ -43,7 +43,7 @@ CREATE TABLE comments
 --enter some comments on a match
 INSERT INTO comments(match_id, commenter, text) VALUES ('2', '4', 'Can''t wait to get in on the action after seeing Billy vs Billy!');
 INSERT INTO comments(match_id, commenter, text) VALUES ('4', '3', 'CLose game!');
-INSERT INTO comments(match_id, commenter, text) VALUES ('3', '2', 'Suprise win!!!!');
+INSERT INTO comments(match_id, commenter, text) VALUES ('3', '2', 'Suprise win!!!!');       
 
 
 
