@@ -35,6 +35,10 @@
     <?php
     $player = htmlspecialchars($_POST["playerName"]);
     echo $player;
+    var_dump($_POST);
+    echo "player: ";
+    var_dump($player);
+
     if(!empty($player)){
     $query = "INSERT INTO players(name) VALUES (:name)";
     $statement = $db->prepare($query);
