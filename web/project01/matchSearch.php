@@ -55,11 +55,11 @@
         $match = $statement->fetch();
 
         
-        echo "<tr><td>" . $row["id"];
-                echo "<td>" . $row["p1n"];
-                echo "<td>" . $row["p2n"];
-                echo "<td>" . $row["p3n"];
-                echo "<td>" . $row["date"];
+        echo "<tr><td>" . $match["id"];
+                echo "<td>" . $match["p1n"];
+                echo "<td>" . $match["p2n"];
+                echo "<td>" . $match["p3n"];
+                echo "<td>" . $match["date"];
         }
     ?>
     
