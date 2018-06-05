@@ -55,7 +55,7 @@
     echo '</div>';
     ?>
 
-    <form action="createPlayer.php" action="post">
+    <form action="createPlayer.php" method="post">
     <div>Input the new Player's name</div>
     <input type="text" name="playerName">
     <br>
