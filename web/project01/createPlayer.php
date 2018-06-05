@@ -44,7 +44,6 @@
     $statement = $db->prepare($query);
     $statement->bindValue(":name", $player, PDO::PARAM_STR);
     $statement->execute();
-    
     }
     
     echo '<div><strong>Players</strong> <br>';
