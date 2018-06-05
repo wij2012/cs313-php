@@ -69,10 +69,7 @@
         , comments.match_id
         , comments.text FROM players INNER JOIN comments
         ON comments.commenter = players.id
-        WHERE match_id = :id;";
-        $statement = $db->prepare($query);
-        $statement->bindValue(":id", $id, PDO::PARAM_INT);
-        $statement->execute();
+        WHERE comments.match_id = :id;";
 
         $comments = $statement->fetch();
         echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
