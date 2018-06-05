@@ -54,12 +54,30 @@
 
         $match = $statement->fetch();
 
-        
-        echo "<tr><td>" . $match["id"];
-                echo "<td>" . $match["p1n"];
-                echo "<td>" . $match["p2n"];
-                echo "<td>" . $match["p3n"];
-                echo "<td>" . $match["date"];
+        echo "<table><tr><th>Match ID Number</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
+        echo "<tr><td>" . $match["id"] . "</td>";
+        echo "<td>" . $match["p1n"] . "</td>";
+        echo "<td>" . $match["p2n"] . "</td>";
+        echo "<td>" . $match["p3n"] . "</td>";
+        echo "<td>" . $match["date"] . "</td></tr>";
+        echo "</table> </div>";
+
+        $query = "SELECT players.name
+        , comments.match_id
+        , comments.text FROM players INNER JOIN comments
+        ON comments.commenter = players.id
+        WHERE match_id = :id;";
+        $statement = $db->prepare($query);
+        $statement->bindValue(":id", $id, PDO::PARAM_INT);
+        $statement->execute();
+
+        $match = $statement->fetch();
+        echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
+        echo '<tr><td>' . $row['match_id'] . '</td>';
+        echo '<td>' . $row['name'] . '</td>';
+        echo '<td>' . $row['text'] . '</td></tr>';
+        echo "</table> </div>";
+
         }
     ?>
     
