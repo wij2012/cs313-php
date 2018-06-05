@@ -54,9 +54,6 @@
         $statement->execute();
 
         $match = $statement->fetch();
-
-
-        //print the comments on the given match
         echo "<table><tr><th>Match ID Number</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
         echo "<tr><td>" . $match["id"] . "</td>";
         echo "<td>" . $match["p1n"] . "</td>";
@@ -65,7 +62,9 @@
         echo "<td>" . $match["date"] . "</td></tr>";
         echo "</table> </div>";
 
-        $query = "SELECT players.name
+
+        //print the comments on the given match
+        /*$query = "SELECT players.name
         , comments.match_id
         , comments.text FROM players INNER JOIN comments
         ON comments.commenter = players.id
@@ -76,8 +75,19 @@
         echo '<tr><td>' . $comments['match_id'] . '</td>';
         echo '<td>' . $comments['name'] . '</td>';
         echo '<td>' . $comments['text'] . '</td></tr>';
+        echo "</table> </div>";*/
+        echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
+        foreach($db->query("SELECT players.name
+        , comments.match_id
+        , comments.text FROM players INNER JOIN comments
+        ON comments.commenter = players.id
+        WHERE comments.match_id = :id;") as $comments){
+            echo '<tr><td>' . $comments['match_id'] . '</td>';
+            echo '<td>' . $comments['name'] . '</td>';
+            echo '<td>' . $comments['text'] . '</td></tr>';
+        }
         echo "</table> </div>";
-
+        
         }
     ?>
     
