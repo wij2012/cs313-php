@@ -39,6 +39,8 @@
 
     echo " $player1 - $player2 - $winner";
 
+    //find player ids goes here
+    
     //insert new match goes here
 
     echo "<table><tr><th>Match ID Number</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";

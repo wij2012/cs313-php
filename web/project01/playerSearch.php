@@ -35,13 +35,20 @@
 
     <?php
         $table = $_POST["table"];
+        $player = $_POST["player"];
 
         //this link might help with this part https://www.youtube.com/watch?v=GJIBL87w_1Y
         if($table == 'matches'){
-            foreach($db->query('SELECT * FROM players WHERE players.name = $table;') as $row){
-                echo "id = " . $row['id'];
-                echo "name = " . $row['name'];
+            foreach($db->query('SELECT * FROM players') as $row){
+                //echo "id = " . $row['id'];
+                echo "" . $row['name'];
             }
+            
+            $query = "SELECT * FROM players 
+            WHERE name = :name";
+            $statement = $db->prepare($query);
+            $statement->bindValue(":name", $player, PDO::PARAM_STR);
+            $statement->execute();
         }
 
         else if($table == 'comments'){
@@ -62,7 +69,7 @@
         <br> <br>
         
         <div> Enter the name of the player who you are searching </div>
-        <input type="text">
+        <input type="text" name="player">
         <br><br>
         <input type="submit">
     </form>
