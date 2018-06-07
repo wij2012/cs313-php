@@ -51,6 +51,34 @@
 
             $player = $statement->fetch();
             echo "Player name " . $player["name"]; 
+            $id = $player["id"];
+
+            //search for matches with the given player id in the game (win or lose)
+            $query = "SELECT match.id
+            , p1.name AS p1N
+            , p2.name AS p2N
+            , p3.name AS p3N
+            , match.date FROM players p1 INNER JOIN match 
+            ON p1.id = match.player1
+            INNER JOIN players p2 
+            ON p2.id = match.player2
+            INNER JOIN players p3
+            ON p3.id = match.winner
+            WHERE p1.id = :id OR p2.id = :id";
+            $statement = $db->prepare($query);
+            $statement->bindValue(":id", $id, PDO::PARAM_INT);
+            $statement->execute();
+
+            echo "<table><tr><th>Match ID #</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
+            foreach($statement->fetch() as $match){}
+                echo "<tr><td>" . $match["id"] . "</td>";
+                echo "<td>" . $match["p1n"] . "</td>";
+                echo "<td>" . $match["p2n"] . "</td>";
+                echo "<td>" . $match["p3n"] . "</td>";
+                echo "<td>" . $match["date"] . "</td></tr>";
+            }
+            echo "</table> </div>";
+
         }
 
         else if($table == 'comments'){
