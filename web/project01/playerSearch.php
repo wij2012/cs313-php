@@ -52,7 +52,7 @@
             $player = $statement->fetch();
             echo "Player name " . $player["name"]; 
             $id = $player["id"];
-
+            echo "Player id " . $player["id"];
             //search for matches with the given player id in the game (win or lose)
             $query = "SELECT match.id
             , p1.name AS p1N
