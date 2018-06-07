@@ -36,7 +36,7 @@
     
     ?>
 
-    <form action="makeComment.php" action="post">
+    <form action="makeComment.php" method="post">
     <div>
     NOTICE: You must be a player listed on our website to make a comment on one of our chess matches
     <br> You can see if your name is listed in our database by clicling on the 'See all Records' link

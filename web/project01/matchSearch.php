@@ -54,7 +54,7 @@
         $statement->execute();
 
         $match = $statement->fetch();
-        echo "<table><tr><th>Match ID Number</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
+        echo "<table><tr><th>Match ID #</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
         echo "<tr><td>" . $match["id"] . "</td>";
         echo "<td>" . $match["p1n"] . "</td>";
         echo "<td>" . $match["p2n"] . "</td>";
@@ -87,7 +87,7 @@
             echo '<td>' . $comments['text'] . '</td></tr>';
         }
         echo "</table> </div>";
-        
+
         }
     ?>
     
