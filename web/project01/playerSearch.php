@@ -83,7 +83,7 @@
             , comments.match_id
             , comments.text FROM players INNER JOIN comments
             ON comments.commenter = players.id
-            WHERE comments.commentor = :id";
+            WHERE comments.commenter = :id";
             $statement = $db->prepare($query);
             $statement->bindValue(":id", $id, PDO::PARAM_INT);
             $statement->execute();
