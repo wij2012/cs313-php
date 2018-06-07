@@ -70,7 +70,7 @@
             $statement->execute();
 
             echo "<table><tr><th>Match ID #</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
-            foreach($statement->fetch() as $match){
+            foreach($statement->fetchAll() as $match){
                 echo "<tr><td>" . $match["id"] . "</td>";
                 echo "<td>" . $match["p1n"] . "</td>";
                 echo "<td>" . $match["p2n"] . "</td>";
