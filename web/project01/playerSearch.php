@@ -38,10 +38,10 @@
         $name = $_POST["playerName"];
 
         if($table == 'matches'){
-            foreach($db->query('SELECT * FROM players') as $row){
+            /*foreach($db->query('SELECT * FROM players') as $row){
                 //echo "id = " . $row['id'];
                 echo "" . $row['name'];
-            }
+            }*/
             
             $query = "SELECT * FROM players 
             WHERE name = :name";
@@ -49,7 +49,7 @@
             $statement->bindValue(":name", $name, PDO::PARAM_STR);
             $statement->execute();
 
-            $player = $db->fetch();
+            $player = $statement->fetch();
             echo "Player name " . $player["name"]; 
         }
 
