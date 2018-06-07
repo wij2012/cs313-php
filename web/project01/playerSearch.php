@@ -37,23 +37,20 @@
         $table = $_POST["table"];
         $name = $_POST["playerName"];
 
-        if($table == 'matches'){
-            /*foreach($db->query('SELECT * FROM players') as $row){
-                //echo "id = " . $row['id'];
-                echo "" . $row['name'];
-            }*/
-            
-            $query = "SELECT * FROM players 
-            WHERE name = :name";
-            $statement = $db->prepare($query);
-            $statement->bindValue(":name", $name, PDO::PARAM_STR);
-            $statement->execute();
+        //search for the given player name in the player table
+        $query = "SELECT * FROM players 
+        WHERE name = :name";
+        $statement = $db->prepare($query);
+        $statement->bindValue(":name", $name, PDO::PARAM_STR);
+        $statement->execute();
 
-            $player = $statement->fetch();
-            echo "Player name " . $player["name"]; 
-            $id = $player["id"];
-            echo "Player id " . $player["id"];
-            //search for matches with the given player id in the game (win or lose)
+        $player = $statement->fetch();
+        echo "Player name " . $player["name"]; 
+        $id = $player["id"];
+        echo "Player id " . $player["id"];
+
+        //search for matches with the given player id in the game (win or lose)
+        if($table == 'matches'){
             $query = "SELECT match.id
             , p1.name AS p1N
             , p2.name AS p2N
@@ -78,16 +75,28 @@
                 echo "<td>" . $match["date"] . "</td></tr>";
             }
             echo "</table> </div>";
-
         }
 
+        //search comments table for comments made by that player
         else if($table == 'comments'){
+            $query = "SELECT players.name
+            , comments.match_id
+            , comments.text FROM players INNER JOIN comments
+            ON comments.commenter = players.id
+            WHERE commentor = :id";
+            $statement = $db->prepare($query);
+            $statement->bindValue(":id", $id, PDO::PARAM_INT);
+            $statement->execute();
 
+            echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
+            foreach($statement->fetchAll() as $comment){
+                echo '<tr><td>' . $comment['match_id'] . '</td>';
+                echo '<td>' . $comment['name'] . '</td>';
+                echo '<td>' . $comment['text'] . '</td></tr>';
+            }
+            echo "</table> </div>";
         }
-    //need a drop menu to say what table i'm seraching
 
-
-    // need an input box to type who is being searched
     ?>
 
     <form action="playerSearch.php" method="post">
