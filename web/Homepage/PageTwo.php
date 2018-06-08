@@ -14,8 +14,8 @@
     
     <br>
     
-    <div class="list"> The links to <br> 
-        <a href="https://quiet-waters-77482.herokuapp.com/ShoppingCart/shop.html"> My Shopping Cart </a> <br><br>
+    <div class="list"> <strong> The links to </strong> <br> 
+        <a href="https://quiet-waters-77482.herokuapp.com/ShoppingCart/shop.html"> My Shopping Cart </a> <br>
         <a href="https://quiet-waters-77482.herokuapp.com/project01/chessAll.php"> Chess Club Records </a>
 </body>
 </html>
