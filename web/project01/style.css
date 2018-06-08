@@ -3,11 +3,11 @@ table, th, td {
 }
 
 tr:nth-child(even){
-    background-color: white;
+    background-color: lightgray;
 }
 
 tr:nth-child(odd){
-    background-color: gray;
+    background-color: darkgray;
 }
 
 .navbar {
