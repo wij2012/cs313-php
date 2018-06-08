@@ -66,7 +66,7 @@
             $statement->bindValue(":id", $id, PDO::PARAM_INT);
             $statement->execute();
 
-            echo "<table><tr><th>Match ID #</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
+            echo "<div><table><tr><th>Match ID #</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
             foreach($statement->fetchAll() as $match){
                 echo "<tr><td>" . $match["id"] . "</td>";
                 echo "<td>" . $match["p1n"] . "</td>";
@@ -88,7 +88,7 @@
             $statement->bindValue(":id", $id, PDO::PARAM_INT);
             $statement->execute();
 
-            echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
+            echo '<div><table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
             foreach($statement->fetchAll() as $comment){
                 echo '<tr><td>' . $comment['match_id'] . '</td>';
                 echo '<td>' . $comment['name'] . '</td>';

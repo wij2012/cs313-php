@@ -53,7 +53,7 @@
         $statement->bindValue(":id", $id, PDO::PARAM_INT);
         $statement->execute();
 
-        echo "<strong> Record of searched match </strong>";
+        echo "<div><strong> Record of searched match </strong>";
         echo "<table><tr><th>Match ID #</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
         foreach($statement->fetchAll() as $match){
             echo "<tr><td>" . $match["id"] . "</td>";
@@ -75,7 +75,7 @@
         $statement->bindValue(":id", $id, PDO::PARAM_INT);
         $statement->execute();
 
-        echo "<strong> All comments made on the searched match </strong>";
+        echo "<div><strong> All comments made on the searched match </strong>";
         echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
         foreach($statement->fetchAll() as $comments){
             echo '<tr><td>' . $comments['match_id'] . '</td>';
