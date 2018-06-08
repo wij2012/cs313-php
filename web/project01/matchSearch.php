@@ -53,29 +53,19 @@
         $statement->bindValue(":id", $id, PDO::PARAM_INT);
         $statement->execute();
 
-        $match = $statement->fetch();
+        echo "<div> Record of searched match </div>";
         echo "<table><tr><th>Match ID #</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
-        echo "<tr><td>" . $match["id"] . "</td>";
-        echo "<td>" . $match["p1n"] . "</td>";
-        echo "<td>" . $match["p2n"] . "</td>";
-        echo "<td>" . $match["p3n"] . "</td>";
-        echo "<td>" . $match["date"] . "</td></tr>";
+        foreach($statement->fetchAll() as $match){
+            echo "<tr><td>" . $match["id"] . "</td>";
+            echo "<td>" . $match["p1n"] . "</td>";
+            echo "<td>" . $match["p2n"] . "</td>";
+            echo "<td>" . $match["p3n"] . "</td>";
+            echo "<td>" . $match["date"] . "</td></tr>";
+        }
         echo "</table> </div>";
 
 
-        //print the comments on the given match
-        /*$query = "SELECT players.name
-        , comments.match_id
-        , comments.text FROM players INNER JOIN comments
-        ON comments.commenter = players.id
-        WHERE comments.match_id = :id;";
-
-        $comments = $statement->fetch();
-        echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
-        echo '<tr><td>' . $comments['match_id'] . '</td>';
-        echo '<td>' . $comments['name'] . '</td>';
-        echo '<td>' . $comments['text'] . '</td></tr>';
-        echo "</table> </div>";*/
+        //print comments on searched match
         $query = "SELECT players.name
         , comments.match_id
         , comments.text FROM players INNER JOIN comments
@@ -85,6 +75,7 @@
         $statement->bindValue(":id", $id, PDO::PARAM_INT);
         $statement->execute();
 
+        echo "<div> All comments made on the searched match </div>";
         echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
         foreach($statement->fetchAll() as $comments){
             echo '<tr><td>' . $comments['match_id'] . '</td>';
