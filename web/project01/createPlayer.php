@@ -34,11 +34,8 @@
     <h1>Create a new Player </h1>
     <?php
     $player = htmlspecialchars($_POST["playerName"]);
-    echo $player;
-    var_dump($_POST);
-    echo "player: ";
-    var_dump($player);
 
+    //insert new player into player table
     if(!empty($player)){
     $query = "INSERT INTO players(name) VALUES (:name)";
     $statement = $db->prepare($query);
@@ -46,6 +43,7 @@
     $statement->execute();
     }
     
+    //display all player names in players table
     echo '<div><strong>Players</strong> <br>';
     foreach ($db->query('SELECT * FROM players') as $row)
     {
