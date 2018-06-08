@@ -76,12 +76,17 @@
         echo '<td>' . $comments['name'] . '</td>';
         echo '<td>' . $comments['text'] . '</td></tr>';
         echo "</table> </div>";*/
-        echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
-        foreach($db->query("SELECT players.name
+        $query = "SELECT players.name
         , comments.match_id
         , comments.text FROM players INNER JOIN comments
         ON comments.commenter = players.id
-        WHERE comments.match_id = :id;") as $comments){
+        WHERE comments.match_id = :id;";
+        $statement = $db->prepare($query);
+        $statement->bindValue(":id", $id, PDO::PARAM_INT);
+        $statement->execute();
+
+        echo '<table><tr><th> Match </th> <th> Commenter </th> <th> Comment </th></tr>';
+        foreach($statement->fetchAll() as $comments){
             echo '<tr><td>' . $comments['match_id'] . '</td>';
             echo '<td>' . $comments['name'] . '</td>';
             echo '<td>' . $comments['text'] . '</td></tr>';
