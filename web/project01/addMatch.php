@@ -84,7 +84,7 @@
             $statement->bindValue(":player1", $player1_id, PDO::PARAM_INT);
             $statement->bindValue(":player2", $player2_id, PDO::PARAM_INT);
             $statement->bindValue(":winner", $winner_id, PDO::PARAM_INT);
-            $statement->bindValue(":date", strtotime(date ("Y-m-d" . "$year - $month - $day")), PDO::PARAM_STR);
+            $statement->bindValue(":date", strtotime(date ("Y-m-d H:i:s")), PDO::PARAM_STR);
             $statement->execute(); 
 
             /*$sql = "UPDATE my_table SET current_date = :date WHERE id = 43";
