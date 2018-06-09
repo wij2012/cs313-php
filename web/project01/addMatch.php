@@ -68,7 +68,7 @@
 
         //search for given winner name in player table
         $query = "SELECT * FROM players 
-        WHERE name = :player2";
+        WHERE name = :winner";
         $statement = $db->prepare($query);
         $statement->bindValue(":winner", $player2, PDO::PARAM_STR);
         $statement->execute();
