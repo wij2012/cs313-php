@@ -70,7 +70,7 @@
         $query = "SELECT * FROM players 
         WHERE name = :winner";
         $statement = $db->prepare($query);
-        $statement->bindValue(":winner", $player2, PDO::PARAM_STR);
+        $statement->bindValue(":winner", $winner, PDO::PARAM_STR);
         $statement->execute();
         //extract player id from player table
         $winner = $statement->fetch();
