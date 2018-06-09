@@ -1,12 +1,29 @@
+/* change the name of this file and the links in all the files where it is referenced then do a push to fix the issue*/
+
 body {
     background-color: #b30000;
     text-align: center;
+}
+
+.data{
+    width: 50%;
+    background-color: #cccccc;
+    border-style: solid;
+    border-radius: 5px;
+    margin: auto;
 }
 
 table, th, td {
     border: 1px solid black;
 }
 
+tr:nth-child(even){
+    background-color: lightgray;
+}
+
+tr:nth-child(odd){
+    background-color: darkgray;
+}
 
 .navbar {
     background-color: #333;
