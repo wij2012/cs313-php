@@ -48,7 +48,7 @@
         $query = "SELECT * FROM players
         WHERE name = :player1";
         $statement = $db->prepare($query);
-        $statement->bindValue(":name", $player1, PDO::PARAM_STR);
+        $statement->bindValue(":player1", $player1, PDO::PARAM_STR);
         $statement->execute();
         //extract player id from player table
         $player1 = $statement->fetch();
@@ -59,7 +59,7 @@
         $query = "SELECT * FROM players 
         WHERE name = :player2";
         $statement = $db->prepare($query);
-        $statement->bindValue(":name", $player2, PDO::PARAM_STR);
+        $statement->bindValue(":player2", $player2, PDO::PARAM_STR);
         $statement->execute();
         //extract player id from player table
         $player2 = $statement->fetch();
@@ -70,7 +70,7 @@
         $query = "SELECT * FROM players 
         WHERE name = :player2";
         $statement = $db->prepare($query);
-        $statement->bindValue(":name", $player2, PDO::PARAM_STR);
+        $statement->bindValue(":winner", $player2, PDO::PARAM_STR);
         $statement->execute();
         //extract player id from player table
         $winner = $statement->fetch();
