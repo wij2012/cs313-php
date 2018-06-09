@@ -32,7 +32,7 @@
 </head>
 <body>
     <h1>Search Players' games and comments </h1>
-
+    <div class="data">
     <?php
         $table = $_POST["table"];
         $name = $_POST["playerName"];
@@ -112,5 +112,7 @@
         <br><br>
         <input type="submit">
     </form>
+
+    </div>
 </body>
 </html>

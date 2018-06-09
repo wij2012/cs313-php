@@ -32,6 +32,7 @@
 </head>
 <body>
 <h1>Comment on a match </h1>
+<div class="data">
     <?php
     $match_id = $_POST["match_id"];
     $name = $_POST["playerName"];
@@ -89,5 +90,7 @@
     <br>
     <input type="submit">
     </form>
+
+    </div>
 </body>
 </html>

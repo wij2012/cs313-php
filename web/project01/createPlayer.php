@@ -32,6 +32,7 @@
 </head>
 <body>
     <h1>Create a new Player </h1>
+    <div class="data">
     <?php
     $player = htmlspecialchars($_POST["playerName"]);
 
@@ -58,5 +59,6 @@
     <br>
     <input type="submit">
     </form>
+    </div>
 </body>
 </html>

@@ -32,6 +32,7 @@
 </head>
 <body>
 <h1>Add data for a new/recent Match </h1>
+<div class="data">
     <?php
     $player1 = $_POST["player1"];
     $player2 = $_POST["player2"];
@@ -104,5 +105,6 @@
     <br>
     <input type="submit">
     </form>
+</div>
 </body>
 </html>

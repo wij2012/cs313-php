@@ -33,6 +33,7 @@
 </head>
 <body>
     <h1>Search Match Records and Match Comments</h1>
+    <div class="data">
     <?php
     $id = $_POST["matchID"];
 
@@ -92,5 +93,6 @@
     <input type="text" name="matchID">
     <input type="submit">
     </form>
+    </div>
 </body>
 </html>
