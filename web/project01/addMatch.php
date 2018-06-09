@@ -53,6 +53,7 @@
         //extract player id from player table
         $player1 = $statement->fetch();
         $player1_id = $player1["id"];
+        echo "player 1 = " . $player1_id;
 
         //search for given player2 name in player table
         $query = "SELECT * FROM players 
@@ -63,7 +64,8 @@
         //extract player id from player table
         $player2 = $statement->fetch();
         $player2_id = $player2["id"];
-        
+        echo "player 2 = " . $player2_id;
+
         //search for given winner name in player table
         $query = "SELECT * FROM players 
         WHERE name = :player2";
@@ -73,6 +75,7 @@
         //extract player id from player table
         $winner = $statement->fetch();
         $winner_id = $winner["id"];
+        echo "Winner = " . $winner_id;
 
         //insert statement into the match table and print all matches off
         if(!empty($player1_id)&&!empty($player2_id)&&!empty($winner_id)){
