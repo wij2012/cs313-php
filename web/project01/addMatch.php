@@ -43,28 +43,50 @@
     $date = $year . "-" . $month . "-" . $day;
     echo " $player1 - $player2 - $winner - $date";
 
-    //find player ids goes here
-    
-    //insert new match goes here
+    if(!empty($player1)&&!empty($player2)&&!empty($winner)&&!empty($year)&&!empty($month)&&!empty($day)){
+        //search for given player1 name in player table
+        $query = "SELECT * FROM players
+        WHERE name = :player1";
+        $statement = $db->prepare($query);
+        $statement->bindValue(":name", $player1, PDO::PARAM_STR);
+        $statement->execute();
+        //extract player id from player table
+        $player = $statement->fetch();
+        $player1_id = $player["id"];
 
-    echo "<table><tr><th>Match ID Number</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
-    foreach ($db->query("SELECT match.id
-    , p1.name AS p1N
-    , p2.name AS p2N
-    , p3.name AS p3N
-    , match.date FROM players p1 INNER JOIN match 
-    ON p1.id = match.player1
-    INNER JOIN players p2 
-    ON p2.id = match.player2
-    INNER JOIN players p3
-    ON p3.id = match.winner;") as $row){
-        echo "<tr><td>" . $row["id"] . "</td>";
-        echo "<td>" . $row["p1n"] . "</td>";
-        echo "<td>" . $row["p2n"] . "</td>";
-        echo "<td>" . $row["p3n"] . "</td>";
-        echo "<td>" . $row["date"] . "</td></tr>";
+        //search for given player2 name in player table
+        $query = "SELECT * FROM players 
+        WHERE name = :player2";
+        $statement = $db->prepare($query);
+        $statement->bindValue(":name", $player2, PDO::PARAM_STR);
+        $statement->execute();
+        //extract player id from player table
+        $player = $statement->fetch();
+        $player2_id = $player["id"];
+        
+        //search for given winner name in player table
+        $query = "SELECT * FROM players 
+        WHERE name = :player2";
+        $statement = $db->prepare($query);
+        $statement->bindValue(":name", $player2, PDO::PARAM_STR);
+        $statement->execute();
+        //extract player id from player table
+        $player = $statement->fetch();
+        $winner_id = $player["id"];
+
+        //insert statement into the match table and print all matches off
+        if(!empty($player1_id)&&!empty($player2_id)&&!empty($winner_id)){
+            $query = "INSERT INTO match (player1, player2, winner, date) VALUES (:player1, :player2, :winner, :date)";
+            $statement = $db->prepare($query);
+            $statement->bindValue(":player1", $player1_id, PDO::PARAM_INT);
+            $statement->bindValue(":player2", $player2_id, PDO::PARAM_INT);
+            $statement->bindValue(":winner", $winner_id, PDO::PARAM_INT);
+            $statement->bindValue(":date", $date, PDO::PARAM_STR);
+            $statement->execute(); 
+        }
+
     }
-    echo "</table> </div>";
+    
     ?>
 
     <form action="addMatch.php" method="post">

@@ -44,10 +44,9 @@
         $statement->bindValue(":name", $name, PDO::PARAM_STR);
         $statement->execute();
 
+        //extract the id of the searched player
         $player = $statement->fetch();
-        echo "Player name " . $player["name"]; 
         $id = $player["id"];
-        echo "Player id " . $player["id"];
 
         //search for matches with the given player id in the game (win or lose)
         if($table == 'matches'){
@@ -66,6 +65,7 @@
             $statement->bindValue(":id", $id, PDO::PARAM_INT);
             $statement->execute();
 
+            //print the matches off that the searched player participated in
             echo "<div><table><tr><th>Match ID #</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
             foreach($statement->fetchAll() as $match){
                 echo "<tr><td>" . $match["id"] . "</td>";
