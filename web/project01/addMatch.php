@@ -79,12 +79,12 @@
 
         //insert statement into the match table and print all matches off
         if(!empty($player1_id)&&!empty($player2_id)&&!empty($winner_id)){
-            $query = "INSERT INTO match (player1, player2, winner, date) VALUES (:player1, :player2, :winner, :date)";
+            $query = "INSERT INTO match (player1, player2, winner, datePlayed) VALUES (:player1, :player2, :winner, :datePlayed)";
             $statement = $db->prepare($query);
             $statement->bindValue(":player1", $player1_id, PDO::PARAM_INT);
             $statement->bindValue(":player2", $player2_id, PDO::PARAM_INT);
             $statement->bindValue(":winner", $winner_id, PDO::PARAM_INT);
-            $statement->bindValue(":date", strtotime(date ("Y-m-d H:i:s")), PDO::PARAM_STR);
+            $statement->bindValue(":datePlayed", $date, PDO::PARAM_STR);
             $statement->execute(); 
 
             /*$sql = "UPDATE my_table SET current_date = :date WHERE id = 43";

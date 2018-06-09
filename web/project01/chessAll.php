@@ -53,7 +53,7 @@
             , p1.name AS p1N
             , p2.name AS p2N
             , p3.name AS p3N
-            , match.date FROM players p1 INNER JOIN match 
+            , match.datePlayed FROM players p1 INNER JOIN match 
             ON p1.id = match.player1
             INNER JOIN players p2 
             ON p2.id = match.player2
@@ -64,7 +64,7 @@
                 echo "<td>" . $row["p1n"] . "</td>";
                 echo "<td>" . $row["p2n"] . "</td>";
                 echo "<td>" . $row["p3n"] . "</td>";
-                echo "<td>" . $row["date"] . "</td></tr>";
+                echo "<td>" . $row["datePlayed"] . "</td></tr>";
             }
             echo "</table> </div>";
         }
