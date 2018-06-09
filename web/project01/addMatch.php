@@ -51,8 +51,8 @@
         $statement->bindValue(":name", $player1, PDO::PARAM_STR);
         $statement->execute();
         //extract player id from player table
-        $player = $statement->fetch();
-        $player1_id = $player["id"];
+        $player1 = $statement->fetch();
+        $player1_id = $player1["id"];
 
         //search for given player2 name in player table
         $query = "SELECT * FROM players 
@@ -61,8 +61,8 @@
         $statement->bindValue(":name", $player2, PDO::PARAM_STR);
         $statement->execute();
         //extract player id from player table
-        $player = $statement->fetch();
-        $player2_id = $player["id"];
+        $player2 = $statement->fetch();
+        $player2_id = $player2["id"];
         
         //search for given winner name in player table
         $query = "SELECT * FROM players 
@@ -71,8 +71,8 @@
         $statement->bindValue(":name", $player2, PDO::PARAM_STR);
         $statement->execute();
         //extract player id from player table
-        $player = $statement->fetch();
-        $winner_id = $player["id"];
+        $winner = $statement->fetch();
+        $winner_id = $winner["id"];
 
         //insert statement into the match table and print all matches off
         if(!empty($player1_id)&&!empty($player2_id)&&!empty($winner_id)){
