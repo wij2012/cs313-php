@@ -38,7 +38,7 @@
     $id = $_POST["matchID"];
 
     if(!empty($id)){
-        //print the match data 
+        //prepare the query
         $query = "SELECT match.id
         , p1.name AS p1N
         , p2.name AS p2N
@@ -54,6 +54,7 @@
         $statement->bindValue(":id", $id, PDO::PARAM_INT);
         $statement->execute();
 
+        //print the match data 
         echo "<div><strong> Record of searched match </strong>";
         echo "<table><tr><th>Match ID #</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
         foreach($statement->fetchAll() as $match){
@@ -64,7 +65,6 @@
             echo "<td>" . $match["datePlayed"] . "</td></tr>";
         }
         echo "</table> </div> <br><br>";
-        echo "date played " . $match["datePlayed"];
 
         //print comments on searched match
         $query = "SELECT players.name

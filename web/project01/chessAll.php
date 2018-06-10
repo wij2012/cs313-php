@@ -64,7 +64,7 @@
                 echo "<td>" . $row["p1n"] . "</td>";
                 echo "<td>" . $row["p2n"] . "</td>";
                 echo "<td>" . $row["p3n"] . "</td>";
-                echo "<td>" . $row["datePlayed"] . "</td></tr>";
+                echo "<td>" . $row["dateplayed"] . "</td></tr>";
             }
             echo "</table> </div>";
         }

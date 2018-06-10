@@ -18,7 +18,7 @@ table, th, td {
 }
 
 tr:nth-child(even){
-    background-color: lightgray;
+    background-color: gray;
 }
 
 tr:nth-child(odd){
