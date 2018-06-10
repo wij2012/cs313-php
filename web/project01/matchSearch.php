@@ -54,6 +54,7 @@
         $statement->bindValue(":id", $id, PDO::PARAM_INT);
         $statement->execute();
 
+        echo "date played " . $_POST["datePlayed"];
         echo "<div><strong> Record of searched match </strong>";
         echo "<table><tr><th>Match ID #</th> <th> Player 1 </th> <th> Player 2 </th> <th> Winner </th> <th> Date Played </th></tr>";
         foreach($statement->fetchAll() as $match){
