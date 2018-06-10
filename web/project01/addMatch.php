@@ -41,7 +41,7 @@
     $month = $_POST["month"];
     $day = $_POST["day"];
     $date = $year . "-" . $month . "-" . $day;
-    echo " $player1 - $player2 - $winner - $date";
+    //echo " $player1 - $player2 - $winner - $date";
 
     if(!empty($player1)&&!empty($player2)&&!empty($winner)&&!empty($year)&&!empty($month)&&!empty($day)){
         //search for given player1 name in player table
@@ -77,7 +77,7 @@
         $winner_id = $winner["id"];
         echo "Winner = " . $winner_id;
 
-        //insert statement into the match table and print all matches off
+        //insert statement into the match table
         if(!empty($player1_id)&&!empty($player2_id)&&!empty($winner_id)){
             $query = "INSERT INTO match (player1, player2, winner, datePlayed) VALUES (:player1, :player2, :winner, :datePlayed)";
             $statement = $db->prepare($query);

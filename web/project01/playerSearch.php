@@ -72,7 +72,7 @@
                 echo "<td>" . $match["p1n"] . "</td>";
                 echo "<td>" . $match["p2n"] . "</td>";
                 echo "<td>" . $match["p3n"] . "</td>";
-                echo "<td>" . $match["datePlayed"] . "</td></tr>";
+                echo "<td>" . $match["dateplayed"] . "</td></tr>";
             }
             echo "</table> </div>";
         }
