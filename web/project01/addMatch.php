@@ -40,9 +40,6 @@
     $year = $_POST["year"];
     $month = $_POST["month"];
     $day = $_POST["day"]; //need to concat this to be 01 or 04 if the number is less than 10
-    if($day < 10){
-        $day += "0" . $day;
-    }
     $date = $year . "-" . $month . "-" . $day;
     //echo " $player1 - $player2 - $winner - $date";
 
