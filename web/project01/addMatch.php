@@ -84,26 +84,27 @@
         }
 
         ////if the date wasn't entered, enter the date that the entry was made 
-        if(empty($_POST["day"])){
-            $date = date("Y/m/d");
-            echo "if " . $date;
-            $query = "UPDATE match SET datePlayed = :dateEntered WHERE datePlayed = '';";   
-            $statement = $db->prepare($query);
-            $statement->bindValue(":dateEntered", $date, PDO::PARAM_STR);
-            $statement->execute();         
-        }
-
-        //enter date entered by the user if the data is there
-        else{
+        if(!empty($_POST["day"])){
             $year = $_POST["year"];
             $month = $_POST["month"];
             $day = $_POST["day"];
             $date = $year . "-" . $month . "-" . $day;
-            echo "else " . $date;
+            echo "if " . $date;
             $query = "UPDATE match SET datePlayed = :datePlayed WHERE datePlayed = '';";   
             $statement = $db->prepare($query);
             $statement->bindValue(":datePlayed", $date, PDO::PARAM_STR);
             $statement->execute();
+                   
+        }
+
+        //enter date entered by the user if the data is there
+        else{
+            $date = date("Y/m/d");
+            echo "else " . $date;
+            $query = "UPDATE match SET datePlayed = :dateEntered WHERE datePlayed = '';";   
+            $statement = $db->prepare($query);
+            $statement->bindValue(":dateEntered", $date, PDO::PARAM_STR);
+            $statement->execute();  
         }
     }
     
