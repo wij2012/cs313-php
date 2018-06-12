@@ -79,12 +79,12 @@
 
         //insert statement into the match table
         if(!empty($player1_id)&&!empty($player2_id)&&!empty($winner_id)){
-            $query = "INSERT INTO match (player1, player2, winner, datePlayed) VALUES (:player1, :player2, :winner, :datePlayed)";
+            $query = "INSERT INTO match (player1, player2, winner, datePlayed) VALUES (:player1, :player2, :winner, :dateplayed)";
             $statement = $db->prepare($query);
             $statement->bindValue(":player1", $player1_id, PDO::PARAM_INT);
             $statement->bindValue(":player2", $player2_id, PDO::PARAM_INT);
             $statement->bindValue(":winner", $winner_id, PDO::PARAM_INT);
-            $statement->bindValue(":datePlayed", $date, PDO::PARAM_STR);
+            $statement->bindValue(":dateplayed", $date, PDO::PARAM_STR);
             $statement->execute(); 
         }
 
