@@ -90,7 +90,7 @@
             $day = $_POST["day"];
             $date = $year . "-" . $month . "-" . $day;
             echo "if " . $date;
-            $query = "UPDATE match SET datePlayed = :datePlayed WHERE datePlayed = NULL;";   
+            $query = "UPDATE match SET datePlayed = :datePlayed WHERE datePlayed = ;";   
             $statement = $db->prepare($query);
             $statement->bindValue(":datePlayed", $date, PDO::PARAM_STR);
             $statement->execute();
@@ -101,7 +101,7 @@
         else{
             $date = date("Y/m/d");
             echo "else " . $date;
-            $query = "UPDATE match SET datePlayed = :dateEntered WHERE datePlayed = NULL;";   
+            $query = "UPDATE match SET datePlayed = :dateEntered WHERE datePlayed = ;";   
             $statement = $db->prepare($query);
             $statement->bindValue(":dateEntered", $date, PDO::PARAM_STR);
             $statement->execute();  
