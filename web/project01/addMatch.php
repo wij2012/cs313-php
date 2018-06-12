@@ -39,9 +39,9 @@
     $winner = $_POST["winner"];
     $year = $_POST["year"];
     $month = $_POST["month"];
-    $day = $_POST["day"]; //need to concat this to be 01 or 04 if the number is less than 10
+    $day = $_POST["day"];
     $date = $year . "-" . $month . "-" . $day;
-    //echo " $player1 - $player2 - $winner - $date";
+
 
     if(!empty($player1)&&!empty($player2)&&!empty($winner)&&!empty($year)&&!empty($month)&&!empty($day)){
         //search for given player1 name in player table
@@ -53,7 +53,7 @@
         //extract player id from player table
         $player1 = $statement->fetch();
         $player1_id = $player1["id"];
-        echo "player 1 = " . $player1_id;
+        //echo "player 1 = " . $player1_id;
 
         //search for given player2 name in player table
         $query = "SELECT * FROM players 
@@ -64,7 +64,7 @@
         //extract player id from player table
         $player2 = $statement->fetch();
         $player2_id = $player2["id"];
-        echo "player 2 = " . $player2_id;
+        //echo "player 2 = " . $player2_id;
 
         //search for given winner name in player table
         $query = "SELECT * FROM players 
@@ -75,7 +75,7 @@
         //extract player id from player table
         $winner = $statement->fetch();
         $winner_id = $winner["id"];
-        echo "Winner = " . $winner_id;
+        //echo "Winner = " . $winner_id;
 
         //insert statement into the match table
         if(!empty($player1_id)&&!empty($player2_id)&&!empty($winner_id)){

@@ -90,7 +90,9 @@
     
     <form action="matchSearch.php" method="post">
     Enter the ID number of the match you would like to search
+    <br>
     <input type="text" name="matchID">
+    <br>
     <input type="submit">
     </form>
     </div>
