@@ -43,7 +43,7 @@
     $date = $year . "-" . $month . "-" . $day;
 
 
-    if(!empty($player1)&&!empty($player2)&&!empty($winner)){//&&!empty($year)&&!empty($month)&&!empty($day)){
+    if(!empty($player1)&&!empty($player2)&&!empty($winner)&&!empty($year)&&!empty($month)&&!empty($day)){
         //search for given player1 name in player table
         $query = "SELECT * FROM players
         WHERE name = :player1";
