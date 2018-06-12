@@ -74,12 +74,13 @@
 
         //insert statement into the match table
         if(!empty($player1_id)&&!empty($player2_id)&&!empty($winner_id)){
-            $query = "INSERT INTO match (player1, player2, winner/*, datePlayed*/) VALUES (:player1, :player2, :winner/*, :datePlayed*/)";
+            $query = "INSERT INTO match (player1, player2, winner, datePlayed) VALUES (:player1, :player2, :winner, :datePlayed)";
             $statement = $db->prepare($query);
             $statement->bindValue(":player1", $player1_id, PDO::PARAM_INT);
             $statement->bindValue(":player2", $player2_id, PDO::PARAM_INT);
             $statement->bindValue(":winner", $winner_id, PDO::PARAM_INT);
             //$statement->bindValue(":datePlayed", $date, PDO::PARAM_STR);
+            $statement->bindValue(":datePlayed", '0', PDO::PARAM_STR);
             $statement->execute(); 
         }
 
@@ -90,7 +91,7 @@
             $day = $_POST["day"];
             $date = $year . "-" . $month . "-" . $day;
             echo "if " . $date;
-            $query = "UPDATE match SET datePlayed = :datePlayed WHERE datePlayed = ;";   
+            $query = "UPDATE match SET datePlayed = :datePlayed WHERE datePlayed = 0;";   
             $statement = $db->prepare($query);
             $statement->bindValue(":datePlayed", $date, PDO::PARAM_STR);
             $statement->execute();
@@ -101,7 +102,7 @@
         else{
             $date = date("Y/m/d");
             echo "else " . $date;
-            $query = "UPDATE match SET datePlayed = :dateEntered WHERE datePlayed = ;";   
+            $query = "UPDATE match SET datePlayed = :dateEntered WHERE datePlayed = 0;";   
             $statement = $db->prepare($query);
             $statement->bindValue(":dateEntered", $date, PDO::PARAM_STR);
             $statement->execute();  
