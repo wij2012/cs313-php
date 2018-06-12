@@ -103,7 +103,6 @@
     <input type="text" name="winner">
 
     <div>Date:</div>
-    <br>
     Month 
     <br>
     <select  name="month">
@@ -122,6 +121,7 @@
     </select>
     <br>
     Year
+    <br>
     <select name="year">
         <option value="2016"> 2016 </option>
         <option value="2017"> 2017 </option>
@@ -129,6 +129,7 @@
     </select>
     <br>
     Day (please enter a whole number between 1-31 depending on the month)
+    <br>
     <input type="text" name="day">
     <br>
     <input type="submit">
