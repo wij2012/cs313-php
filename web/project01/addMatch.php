@@ -85,7 +85,7 @@
         }
 
         ////if the date wasn't entered, enter the date that the entry was made 
-        if(!empty($_POST["day"])){
+        /*if(!empty($_POST["day"])){
             $year = $_POST["year"];
             $month = $_POST["month"];
             $day = $_POST["day"];
@@ -106,7 +106,7 @@
             $statement = $db->prepare($query);
             $statement->bindValue(":dateEntered", $date, PDO::PARAM_STR);
             $statement->execute();  
-        }
+        }*/
     }
     
     ?>
