@@ -80,7 +80,7 @@
             $statement->bindValue(":player2", $player2_id, PDO::PARAM_INT);
             $statement->bindValue(":winner", $winner_id, PDO::PARAM_INT);
             //$statement->bindValue(":datePlayed", $date, PDO::PARAM_STR);
-            $statement->bindValue(":datePlayed", 0, PDO::PARAM_STR);
+            $statement->bindValue(":datePlayed", '0', PDO::PARAM_STR);
             $statement->execute(); 
         }
 
@@ -91,7 +91,7 @@
             $day = $_POST["day"];
             $date = $year . "-" . $month . "-" . $day;
             echo "if " . $date;
-            $query = "UPDATE match SET datePlayed = :datePlayed WHERE datePlayed = 0;";   
+            $query = "UPDATE match SET datePlayed = :datePlayed WHERE datePlayed = '0';";   
             $statement = $db->prepare($query);
             $statement->bindValue(":datePlayed", $date, PDO::PARAM_STR);
             $statement->execute();
@@ -102,7 +102,7 @@
         else{
             $date = date("Y/m/d");
             echo "else " . $date;
-            $query = "UPDATE match SET datePlayed = :dateEntered WHERE datePlayed = 0;";   
+            $query = "UPDATE match SET datePlayed = :dateEntered WHERE datePlayed = '0';";   
             $statement = $db->prepare($query);
             $statement->bindValue(":dateEntered", $date, PDO::PARAM_STR);
             $statement->execute();  
