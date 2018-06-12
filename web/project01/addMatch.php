@@ -86,7 +86,7 @@
         ////if the date wasn't entered, enter the date that the entry was made 
         if(empty($_POST["day"])){
             $date = date("Y/m/d");
-            $query = "UPDATE match SET datePlayed = :dateEntered WHERE datePlayed = ";   
+            $query = "UPDATE match SET datePlayed = :dateEntered WHERE datePlayed = '';";   
             $statement = $db->prepare($query);
             $statement->bindValue(":dateEntered", $date, PDO::PARAM_STR);
             $statement->execute();         
@@ -98,7 +98,7 @@
             $month = $_POST["month"];
             $day = $_POST["day"];
             $date = $year . "-" . $month . "-" . $day;
-            $query = "UPDATE match SET datePlayed = :datePlayed WHERE datePlayed = ";   
+            $query = "UPDATE match SET datePlayed = :datePlayed WHERE datePlayed = '';";   
             $statement = $db->prepare($query);
             $statement->bindValue(":datePlayed", $date, PDO::PARAM_STR);
             $statement->execute();
