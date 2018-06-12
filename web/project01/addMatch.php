@@ -37,13 +37,8 @@
     $player1 = $_POST["player1"];
     $player2 = $_POST["player2"];
     $winner = $_POST["winner"];
-    $year = $_POST["year"];
-    $month = $_POST["month"];
-    $day = $_POST["day"];
-    $date = $year . "-" . $month . "-" . $day;
 
-
-    if(!empty($player1)&&!empty($player2)&&!empty($winner)&&!empty($year)&&!empty($month)&&!empty($day)){
+    if(!empty($player1)&&!empty($player2)&&!empty($winner)){//&&!empty($year)&&!empty($month)&&!empty($day)){
         //search for given player1 name in player table
         $query = "SELECT * FROM players
         WHERE name = :player1";
@@ -79,15 +74,35 @@
 
         //insert statement into the match table
         if(!empty($player1_id)&&!empty($player2_id)&&!empty($winner_id)){
-            $query = "INSERT INTO match (player1, player2, winner, datePlayed) VALUES (:player1, :player2, :winner, :datePlayed)";
+            $query = "INSERT INTO match (player1, player2, winner/*, datePlayed*/) VALUES (:player1, :player2, :winner/*, :datePlayed*/)";
             $statement = $db->prepare($query);
             $statement->bindValue(":player1", $player1_id, PDO::PARAM_INT);
             $statement->bindValue(":player2", $player2_id, PDO::PARAM_INT);
             $statement->bindValue(":winner", $winner_id, PDO::PARAM_INT);
-            $statement->bindValue(":datePlayed", $date, PDO::PARAM_STR);
+            //$statement->bindValue(":datePlayed", $date, PDO::PARAM_STR);
             $statement->execute(); 
         }
 
+        ////if the date wasn't entered, enter the date that the entry was made 
+        if(empty($_POST["day"])){
+            $date = date("Y/m/d");
+            $query = "UPDATE match SET datePlayed = :dateEntered WHERE datePlayed = ";   
+            $statement = $db->prepare($query);
+            $statement->bindValue(":dateEntered", $date, PDO::PARAM_STR);
+            $statement->execute();         
+        }
+
+        //enter date entered by the user if the data is there
+        else{
+            $year = $_POST["year"];
+            $month = $_POST["month"];
+            $day = $_POST["day"];
+            $date = $year . "-" . $month . "-" . $day;
+            $query = "UPDATE match SET datePlayed = :datePlayed WHERE datePlayed = ";   
+            $statement = $db->prepare($query);
+            $statement->bindValue(":datePlayed", $date, PDO::PARAM_STR);
+            $statement->execute();
+        }
     }
     
     ?>

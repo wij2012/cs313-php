@@ -87,7 +87,7 @@
 
     <div>Enter your comment here</div>
     <input type="text" name="comment">
-    <br>
+    <br><br>
     <input type="submit">
     </form>
 
